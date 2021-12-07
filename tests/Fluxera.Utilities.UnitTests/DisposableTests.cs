@@ -58,7 +58,9 @@
 		{
 			// Arrange
 			DisposeMe disposable = new DisposeMe();
-			using (disposable) { }
+			using(disposable)
+			{
+			}
 
 			// Act
 			Action action = () => disposable.SomeMethod();
