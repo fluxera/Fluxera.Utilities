@@ -1,5 +1,5 @@
 ﻿// ReSharper disable once CheckNamespace
-namespace Fluxera.Utilities.Extensions
+namespace System
 {
 	/// <summary>
 	///     Enum containing values for the three periods of the day
@@ -20,6 +20,6 @@ namespace Fluxera.Utilities.Extensions
 		/// <summary>
 		///     The Evening.
 		/// </summary>
-		Evening,
+		Evening
 	}
 }
