@@ -1,6 +1,7 @@
 ﻿namespace Fluxera.Utilities.UnitTests.Extensions.String
 {
 	using System.Collections.Generic;
+	using FluentAssertions;
 	using NUnit.Framework;
 	using Utilities.Extensions;
 
@@ -8,24 +9,36 @@
 	///		See: https://github.com/srkirkland/Inflector
 	/// </summary>
 	[TestFixture]
-    public class DasherizeTests : InflectorTestBase
-    {
-        [Test]
-        public void Dasherize()
-        {
-            foreach (KeyValuePair<string, string> pair in this.TestData)
-            {
-                Assert.AreEqual(pair.Key.Dasherize(), pair.Value);
-            }
-        }
+	public class DasherizeTests
+	{
+		[Test]
+		[TestCaseSource(nameof(TestData))]
+		public void ShouldDasherize(string input, string expected)
+		{
+			string result = input.Dasherize();
+			result.Should().Be(expected);
+		}
 
-        public DasherizeTests()
-        {
-            //Just replaces underscore with a dash
-            this.TestData.Add("some_title", "some-title");
-            this.TestData.Add("some-title", "some-title");
-            this.TestData.Add("some_title_goes_here", "some-title-goes-here");
-            this.TestData.Add("some_title and_another", "some-title and-another");
-        }
-    }
+		[Test]
+		public void ShouldDasherize()
+		{
+			// Arrange
+			string str = "united_people_of_the_world";
+
+			// Act
+			string result = str.Dasherize();
+
+			// Assert
+			result.Should().Be("united-people-of-the-world");
+		}
+
+		//Just replaces underscore with a dash
+		public static IEnumerable<string[]> TestData = new List<string[]>
+		{
+			new string[] {"some_title", "some-title"},
+			new string[] {"some-title", "some-title"},
+			new string[] {"some_title_goes_here", "some-title-goes-here"},
+			new string[] {"some_title and_another", "some-title and-another"},
+		};
+	}
 }

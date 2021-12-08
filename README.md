@@ -213,17 +213,17 @@ The numeric extensions methods are available for the following primitives: ```by
 
 #### Inflection
 
-- **```Pluralize```**
-- **```Singularize```**
-- **```Titleize```**
-- **```Humanize```**
-- **```Pascalize```**
-- **```Camelize```**
-- **```Underscore```**
-- **```Capitalize```**
-- **```Uncapitalize```**
-- **```Ordinalize```**
-- **```Dasherize```**
+- **```Pluralize```**  Returns the plural form of a word.
+- **```Singularize```** Returns the singular form of a word.
+- **```Titleize```** Return a string in a form that can be used as title.
+- **```Humanize```** Humanizes a string.
+- **```Pascalize```** Pascalizes a string.
+- **```Camelize```** Camelizes a string.
+- **```Underscore```** Replaces all dashes with underscores.
+- **```Capitalize```** Capitalizes a string.
+- **```Uncapitalize```** Uncapitalizes a string.
+- **```Ordinalize```** Ordinalizes the given number that is given as string, f.e. '6' to '6th'.
+- **```Dasherize```** Converts all underscores to dashes.
 
 ### Type
 

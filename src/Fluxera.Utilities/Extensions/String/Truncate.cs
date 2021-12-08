@@ -13,7 +13,7 @@ namespace Fluxera.Utilities.Extensions
 		/// <param name="maxLength">The total length of characters to maintain before the  truncate happens.</param>
 		/// <param name="addSuffix">Add '...' suffix to the end of the result if this is <c>true</c>. Default is <c>false</c>.</param>
 		/// <returns>truncated string</returns>
-		public static string Truncate(this string str, int maxLength, bool addSuffix = false)
+		public static string Truncate(this string str, int maxLength, bool addSuffix = true)
 		{
 			if (string.IsNullOrEmpty(str))
 			{

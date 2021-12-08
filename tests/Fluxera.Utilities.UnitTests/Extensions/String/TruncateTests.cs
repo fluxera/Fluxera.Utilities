@@ -15,6 +15,19 @@
 		}
 
 		[Test]
+		public void ShouldTruncate()
+		{
+			// Arrange
+			string str = "This is a longer text about text.";
+
+			// Act
+			string result = str.Truncate(20);
+
+			// Assert
+			result.Should().Be("This is a longer...");
+		}
+
+		[Test]
 		[TestCase(null)]
 		[TestCase("")]
 		public void TruncateReturnsEmptyStringGivenNullOrEmptyString(string input)

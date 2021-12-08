@@ -1,6 +1,8 @@
 ﻿namespace Fluxera.Utilities.UnitTests.Extensions.String
 {
 	using System.Collections.Generic;
+	using System.Globalization;
+	using FluentAssertions;
 	using NUnit.Framework;
 	using Utilities.Extensions;
 
@@ -8,26 +10,38 @@
 	///		See: https://github.com/srkirkland/Inflector
 	/// </summary>
 	[TestFixture]
-	public class CapitalizeTests : InflectorTestBase
+	public class CapitalizeTests
 	{
 		[Test]
-		public void Capitalize()
+		[TestCaseSource(nameof(TestData))]
+		public void ShouldCapitalize(string input, string expected)
 		{
-			foreach (KeyValuePair<string, string> pair in TestData)
-			{
-				Assert.AreEqual(pair.Key.Capitalize(), pair.Value);
-			}
+			string result = input.Capitalize();
+			result.Should().Be(expected);
 		}
 
-		public CapitalizeTests()
+		[Test]
+		public void ShouldCapitalize()
 		{
-			//Capitalizes the first char and lowers the rest of the string
-			TestData.Add("some title", "Some title");
-			TestData.Add("some Title", "Some title");
-			TestData.Add("SOMETITLE", "Sometitle");
-			TestData.Add("someTitle", "Sometitle");
-			TestData.Add("some title goes here", "Some title goes here");
-			TestData.Add("some TITLE", "Some title");
+			// Arrange
+			string str = "united people of the world";
+
+			// Act
+			string result = str.Capitalize();
+
+			// Assert
+			result.Should().Be("United people of the world");
 		}
+		
+		//Capitalizes the first char and lowers the rest of the string
+		public static IEnumerable<string[]> TestData = new List<string[]>
+		{
+			new string[] {"some title", "Some title"},
+			new string[] {"some Title", "Some title"},
+			new string[] {"SOMETITLE", "Sometitle"},
+			new string[] {"someTitle", "Sometitle"},
+			new string[] {"some title goes here", "Some title goes here"},
+			new string[] {"some TITLE", "Some title"},
+		};
 	}
 }

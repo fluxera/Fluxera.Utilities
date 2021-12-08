@@ -9,27 +9,27 @@
 	///		See: https://github.com/srkirkland/Inflector
 	/// </summary>
 	[TestFixture]
-	public class PluralizeTests
+	public class SingularizeTests
 	{
 		[Test]
 		[TestCaseSource(nameof(TestData))]
-		public void ShouldPluralize(string input, string expected)
+		public void ShouldPluralize(string expected, string input)
 		{
-			string result = input.Pluralize();
+			string result = input.Singularize();
 			result.Should().Be(expected);
 		}
 
 		[Test]
-		public void ShouldPluralize()
+		public void ShouldSingularize()
 		{
 			// Arrange
-			string str = "person";
+			string str = "people";
 
 			// Act
-			string result = str.Pluralize();
+			string result = str.Singularize();
 
 			// Assert
-			result.Should().Be("people");
+			result.Should().Be("person");
 		}
 
 		public static IEnumerable<string[]> TestData = new List<string[]>
