@@ -7,7 +7,7 @@ namespace Fluxera.Utilities.Extensions
 	public static partial class DateTimeExtensions
 	{
 		/// <summary>
-		///     Determines whether the date only part of two DateTime values are equal.
+		///     Determines if the date part of two <see cref="DateTime"/> values are equal.
 		/// </summary>
 		/// <param name="date">The date.</param>
 		/// <param name="dateToCompare">The date to compare with.</param>

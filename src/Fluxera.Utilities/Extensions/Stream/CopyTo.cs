@@ -9,30 +9,14 @@ namespace Fluxera.Utilities.Extensions
 	public static partial class StreamExtensions
 	{
 		/// <summary>
-		///     Copies any stream into a local <see cref="MemoryStream" />.
-		/// </summary>
-		/// <param name="stream">The source stream.</param>
-		/// <returns>The new, copied, rewound memory stream.</returns>
-		/// <exception cref="ArgumentException"></exception>
-		public static MemoryStream CopyToMemory(this Stream stream)
-		{
-			Guard.Against.Null(stream, nameof(stream));
-
-			MemoryStream memoryStream = new MemoryStream((int)stream.Length);
-			stream.CopyToStream(memoryStream);
-			memoryStream.Rewind();
-			return memoryStream;
-		}
-
-		/// <summary>
 		///     Copies one stream into a another one.
 		/// </summary>
 		/// <param name="stream">The source stream.</param>
 		/// <param name="targetStream">The target stream.</param>
 		/// <exception cref="ArgumentException"></exception>
-		public static void CopyToStream(this Stream stream, Stream targetStream)
+		public static void CopyTo(this Stream stream, Stream targetStream)
 		{
-			stream.CopyToStream(targetStream, 4096);
+			stream.CopyTo(targetStream, 4096);
 		}
 
 		/// <summary>
@@ -42,7 +26,7 @@ namespace Fluxera.Utilities.Extensions
 		/// <param name="targetStream">The target stream.</param>
 		/// <param name="bufferSize">The buffer size used to read / write.</param>
 		/// <exception cref="ArgumentException"></exception>
-		public static void CopyToStream(this Stream stream, Stream targetStream, int bufferSize)
+		public static void CopyTo(this Stream stream, Stream targetStream, int bufferSize)
 		{
 			Guard.Against.Null(stream, nameof(stream));
 			Guard.Against.Null(targetStream, nameof(targetStream));

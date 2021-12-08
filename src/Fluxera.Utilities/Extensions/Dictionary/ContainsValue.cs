@@ -12,7 +12,7 @@ namespace Fluxera.Utilities.Extensions
 	public static partial class DictionaryExtensions
 	{
 		/// <summary>
-		///     Returns true if the value is in the dictionary.
+		///     Returns true if the value is contained in the dictionary.
 		/// </summary>
 		/// <typeparam name="TKey">The type of the keys.</typeparam>
 		/// <typeparam name="TValue">The type of the values.</typeparam>

@@ -7,7 +7,7 @@ namespace Fluxera.Utilities.Extensions
 	public static partial class DateTimeExtensions
 	{
 		/// <summary>
-		///     Returns whether or not a <see cref="DateTime" /> is during a leap year.
+		///     Returns if or not a <see cref="DateTime" /> is during a leap year.
 		/// </summary>
 		/// <param name="value"></param>
 		/// <returns></returns>

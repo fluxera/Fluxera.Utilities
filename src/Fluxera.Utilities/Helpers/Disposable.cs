@@ -1,3 +1,4 @@
+// ReSharper disable once CheckNamespace
 namespace Fluxera.Utilities
 {
 	using System;
@@ -7,7 +8,7 @@ namespace Fluxera.Utilities
 	///     A base class for disposable objects.
 	/// </summary>
 	[PublicAPI]
-	public abstract class Disposable : IDisposable
+	public abstract class Disposable : IDisposable// TODO: IAsyncDisposable
 	{
 		/// <summary>
 		///     Creates a new instance of the <see cref="Disposable" /> type.

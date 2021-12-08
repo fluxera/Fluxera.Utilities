@@ -4,6 +4,7 @@ namespace Fluxera.Utilities.Extensions
 {
 	using System.Collections.Generic;
 	using System.Collections.ObjectModel;
+	using System.Linq;
 	using Guards;
 	using JetBrains.Annotations;
 
@@ -20,10 +21,7 @@ namespace Fluxera.Utilities.Extensions
 		{
 			Guard.Against.Null(enumerable, nameof(enumerable));
 
-			IList<T> list = new List<T>();
-			list.AddRange(enumerable);
-
-			return new ReadOnlyCollection<T>(list);
+			return new ReadOnlyCollection<T>(enumerable.ToList());
 		}
 	}
 }

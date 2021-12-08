@@ -7,7 +7,7 @@ namespace Fluxera.Utilities.Extensions
 	public static partial class ObjectExtensions
 	{
 		/// <summary>
-		///     Executes given <paramref name="action" /> by locking given <paramref name="source" /> object.
+		///     Executes the given <paramref name="action" /> by locking on the given <paramref name="source" /> object.
 		/// </summary>
 		/// <param name="source">Source object (to be locked)</param>
 		/// <param name="action">Action (to be executed)</param>
@@ -20,7 +20,7 @@ namespace Fluxera.Utilities.Extensions
 		}
 
 		/// <summary>
-		///     Executes given <paramref name="action" /> by locking given <paramref name="source" /> object.
+		///     Executes the given <paramref name="action" /> by locking on the given <paramref name="source" /> object.
 		/// </summary>
 		/// <typeparam name="T">Type of the object (to be locked)</typeparam>
 		/// <param name="source">Source object (to be locked)</param>
@@ -34,7 +34,7 @@ namespace Fluxera.Utilities.Extensions
 		}
 
 		/// <summary>
-		///     Executes given <paramref name="func" /> and returns it's value by locking given <paramref name="source" /> object.
+		///     Executes the given <paramref name="func" /> and returns it's value by locking on the given <paramref name="source" /> object.
 		/// </summary>
 		/// <typeparam name="TResult">Return type</typeparam>
 		/// <param name="source">Source object (to be locked)</param>
@@ -49,7 +49,7 @@ namespace Fluxera.Utilities.Extensions
 		}
 
 		/// <summary>
-		///     Executes given <paramref name="func" /> and returns it's value by locking given <paramref name="source" /> object.
+		///     Executes the given <paramref name="func" /> and returns it's value by locking on the given <paramref name="source" /> object.
 		/// </summary>
 		/// <typeparam name="T">Type of the object (to be locked)</typeparam>
 		/// <typeparam name="TResult">Return type</typeparam>

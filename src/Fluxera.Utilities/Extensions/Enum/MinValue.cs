@@ -11,7 +11,15 @@ namespace Fluxera.Utilities.Extensions
 		/// </summary>
 		public static long MinValue<TEnum>(this TEnum @enum) where TEnum : struct, Enum
 		{
-			return EnumTraits<TEnum>.MinValue;
+			return EnumTraits<TEnum>.MinValue();
+		}
+
+		/// <summary>
+		///     Gets the minimum value of the enum.
+		/// </summary>
+		public static long Min<TEnum>(this TEnum @enum) where TEnum : struct, Enum
+		{
+			return EnumTraits<TEnum>.MinValue();
 		}
 	}
 }

@@ -9,7 +9,7 @@ namespace Fluxera.Utilities.Extensions
 	public static partial class CharExtensions
 	{
 		/// <summary>
-		///     Repeat the given <see cref="char" /> the specified number of times.
+		///     Repeats the given <see cref="char" /> the specified number of times.
 		/// </summary>
 		/// <param name="input">The char to repeat.</param>
 		/// <param name="count">The number of times to repeat the string.</param>

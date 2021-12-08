@@ -9,9 +9,9 @@ namespace Fluxera.Utilities.Extensions
 	public static partial class TypeExtensions
 	{
 		/// <summary>
-		///     Determines if is enumerable the specified type.
+		///     Determines if the specified type is an enumerable.
 		/// </summary>
-		/// <returns><c>true</c> if is enumerable the specified type; otherwise, <c>false</c>.</returns>
+		/// <returns><c>true</c> if type is an enumerable; otherwise, <c>false</c>.</returns>
 		/// <param name="type">Type.</param>
 		public static bool IsEnumerable(this Type type)
 		{

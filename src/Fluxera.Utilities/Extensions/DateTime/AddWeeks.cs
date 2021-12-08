@@ -7,8 +7,7 @@ namespace Fluxera.Utilities.Extensions
 	public static partial class DateTimeExtensions
 	{
 		/// <summary>
-		///     Adds the specified amount of weeks (=7 days gregorian calendar) to the
-		///     passed date value.
+		///     Adds the specified amount of weeks (=7 days gregorian calendar) to the given date value.
 		/// </summary>
 		/// <param name="date">The origin date.</param>
 		/// <param name="value">The amount of weeks to be added.</param>

@@ -12,7 +12,7 @@ namespace Fluxera.Utilities.Extensions
 		///     Applies formatting to the string using the current culture.
 		/// </summary>
 		/// <param name="str">The string containing the format template.</param>
-		/// <param name="args">The arguments für formatting.</param>
+		/// <param name="args">The arguments for formatting.</param>
 		/// <returns>The formatted string.</returns>
 		public static string FormatWith(this string str, params object[] args)
 		{
@@ -26,7 +26,7 @@ namespace Fluxera.Utilities.Extensions
 		/// </summary>
 		/// <param name="str">The string containing the format template.</param>
 		/// <param name="formatProvider">The format provider to use.</param>
-		/// <param name="args">The arguments für formatting.</param>
+		/// <param name="args">The arguments for formatting.</param>
 		/// <returns>The formatted string.</returns>
 		public static string FormatWith(this string str, IFormatProvider formatProvider, params object[] args)
 		{
@@ -34,19 +34,6 @@ namespace Fluxera.Utilities.Extensions
 
 			formatProvider ??= CultureInfo.CurrentCulture;
 			return string.Format(formatProvider, str, args);
-		}
-
-		/// <summary>
-		///     Applies formatting to the string using the invariant culture.
-		/// </summary>
-		/// <param name="str">The string containing the format template.</param>
-		/// <param name="args">The arguments für formatting.</param>
-		/// <returns>The formatted string.</returns>
-		public static string FormatInvariantWith(this string str, params object[] args)
-		{
-			Guard.Against.NullOrWhiteSpace(str, nameof(str));
-
-			return str.FormatWith(CultureInfo.InvariantCulture, args);
 		}
 	}
 }

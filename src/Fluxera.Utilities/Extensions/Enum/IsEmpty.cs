@@ -9,11 +9,11 @@ namespace Fluxera.Utilities.Extensions
 	public static partial class EnumExtensions
 	{
 		/// <summary>
-		///     Gets a flag, if the enum has no values.
+		///     Gets a flag, indicating if the enum has no values.
 		/// </summary>
 		public static bool IsEmpty<TEnum>(this TEnum @enum) where TEnum : struct, Enum
 		{
-			return EnumTraits<TEnum>.IsEmpty;
+			return EnumTraits<TEnum>.IsEmpty();
 		}
 	}
 }

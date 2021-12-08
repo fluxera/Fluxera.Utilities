@@ -7,7 +7,7 @@ namespace Fluxera.Utilities.Extensions
 	public static partial class ArrayExtensions
 	{
 		/// <summary>
-		///     Returns a <see cref="MemoryStream" /> from a byte array.
+		///     Creates a <see cref="MemoryStream" /> from a byte array.
 		/// </summary>
 		/// <param name="buffer">The array with the data to use.</param>
 		/// <returns>A memory stream with the data from the array.</returns>

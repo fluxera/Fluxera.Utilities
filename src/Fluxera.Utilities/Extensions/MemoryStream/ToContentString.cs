@@ -12,8 +12,7 @@ namespace Fluxera.Utilities.Extensions
 	public static partial class MemoryStreamExtensions
 	{
 		/// <summary>
-		///     Converts the content of the stream to a string. <see cref="Encoding.UTF8" />
-		///     is used as default encoding.
+		///     Converts the content of the stream to a string. <see cref="Encoding.UTF8" /> is used as default encoding.
 		/// </summary>
 		/// <param name="stream">The stream to read from.</param>
 		/// <returns>The content of the stream as string.</returns>
@@ -23,8 +22,7 @@ namespace Fluxera.Utilities.Extensions
 		}
 
 		/// <summary>
-		///     Converts the content of the stream to a string. The content is encoded
-		///     with the given encoding.
+		///     Converts the content of the stream to a string. The content is encoded with the given encoding.
 		/// </summary>
 		/// <param name="stream">The stream to read from.</param>
 		/// <param name="encoding">The encoding to use.</param>

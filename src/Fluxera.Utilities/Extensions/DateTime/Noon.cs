@@ -7,10 +7,10 @@ namespace Fluxera.Utilities.Extensions
 	public static partial class DateTimeExtensions
 	{
 		/// <summary>
-		///     Gets a DateTime representing noon on the current date.
+		///     Gets a <see cref="DateTime"/> representing noon on the given date.
 		/// </summary>
-		/// <param name="current">The current date.</param>
-		/// <returns>The modified DateTime object.</returns>
+		/// <param name="current">The date.</param>
+		/// <returns>The modified <see cref="DateTime"/>.</returns>
 		public static DateTime Noon(this DateTime current)
 		{
 			return current.SetTime(12);

@@ -10,7 +10,7 @@ namespace Fluxera.Utilities.Extensions
 	public static partial class ArrayExtensions
 	{
 		/// <summary>
-		///     Check if the given index is within the array.
+		///     Checks if the given index is within the array.
 		/// </summary>
 		/// <param name="source">The array to check the index for.</param>
 		/// <param name="index">The index to check.</param>

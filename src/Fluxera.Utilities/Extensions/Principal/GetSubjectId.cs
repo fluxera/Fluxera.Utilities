@@ -11,10 +11,10 @@ namespace Fluxera.Utilities.Extensions
 	public static partial class PrincipalExtensions
 	{
 		/// <summary>
-		/// Gets the subject identifier.
+		///     Gets the subject identifier.
 		/// </summary>
 		/// <param name="principal">The principal.</param>
-		/// <returns></returns>
+		/// <returns>The subject.</returns>
 		[DebuggerStepThrough]
 		public static string GetSubjectId(this IPrincipal principal)
 		{
@@ -24,17 +24,17 @@ namespace Fluxera.Utilities.Extensions
 		}
 
 		/// <summary>
-		/// Gets the subject identifier.
+		///     Gets the subject identifier.
 		/// </summary>
 		/// <param name="identity">The identity.</param>
-		/// <returns></returns>
+		/// <returns>The subject.</returns>
 		/// <exception cref="InvalidOperationException">sub claim is missing</exception>
 		[DebuggerStepThrough]
 		public static string GetSubjectId(this IIdentity identity)
 		{
 			Guard.Against.Null(identity, nameof(identity));
 
-			ClaimsIdentity claimsIdentity = identity as ClaimsIdentity;
+			ClaimsIdentity? claimsIdentity = identity as ClaimsIdentity;
 			Claim? claim = claimsIdentity?.FindFirst("sub");
 
 			return claim?.Value ?? string.Empty;

@@ -6,6 +6,7 @@ namespace Fluxera.Utilities.Extensions
 
 	public static partial class TypeExtensions
 	{
+		[Obsolete]
 		public static bool IsSubclassOfRawGeneric(this Type toCheck, Type generic)
 		{
 			while (toCheck != null && toCheck != typeof(object))

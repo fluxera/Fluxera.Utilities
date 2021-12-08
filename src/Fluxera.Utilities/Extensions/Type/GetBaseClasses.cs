@@ -9,7 +9,7 @@ namespace Fluxera.Utilities.Extensions
 	public static partial class TypeExtensions
 	{
 		/// <summary>
-		///     Gets all base classes of this type.
+		///     Gets all base classes recursively for the given type.
 		/// </summary>
 		/// <param name="type">The type to get its base classes.</param>
 		/// <param name="includeObject">True, to include the standard <see cref="object" /> type in the returned array.</param>

@@ -16,13 +16,13 @@ namespace Fluxera.Utilities.Extensions
 		{
 			DateTime nextMonth = date.AddMonths(numberOfMonths);
 
-			if (date.Day != DateTime.DaysInMonth(date.Year, date.Month)) //is last day in month
+			if (date.Day != DateTime.DaysInMonth(date.Year, date.Month)) // Is last day in month.
 			{
-				//any other day then last day
+				// Any other day then last day.
 				return nextMonth;
 			}
 
-			//if date was end of month, add remaining days
+			// If the date was end of month, add remaining days.
 			int addDays = DateTime.DaysInMonth(nextMonth.Year, nextMonth.Month) - nextMonth.Day;
 			return nextMonth.AddDays(addDays);
 		}

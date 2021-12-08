@@ -9,10 +9,10 @@ namespace Fluxera.Utilities.Extensions
 	public static partial class ReflectionExtensions
 	{
 		/// <summary>
-		///     Gets the type of the member.
+		///     Gets the underlying type of the member.
 		/// </summary>
 		/// <param name="memberInfo">The member information.</param>
-		/// <returns></returns>
+		/// <returns>The underlying type of the member.</returns>
 		public static Type GetMemberType(this MemberInfo memberInfo)
 		{
 			Guard.Against.Null(memberInfo, nameof(memberInfo));

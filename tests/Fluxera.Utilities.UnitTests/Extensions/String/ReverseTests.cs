@@ -38,13 +38,13 @@
 		}
 
 		[Test]
-		[TestCase(null)]
-		[TestCase("")]
-		public void ReverseReturnsEmptyStringGivenNullOrEmptyString(string input)
+		[TestCase(null, null)]
+		[TestCase("", "")]
+		public void ReverseReturnsInputStringGivenNullOrEmptyString(string input, string expected)
 		{
 			string result = input.Reverse();
 
-			result.Should().Be(string.Empty);
+			result.Should().Be(expected);
 		}
 	}
 }

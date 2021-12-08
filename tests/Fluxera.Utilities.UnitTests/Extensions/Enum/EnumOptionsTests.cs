@@ -5,16 +5,16 @@
 	using Utilities.Extensions;
 
 	[TestFixture]
-	public class EnumValuesTests
+	public class EnumOptionsTests
 	{
 		[Test]
-		public void ShouldGetEnumValues()
+		public void ShouldGetEnumOptions()
 		{
 			// Arrange
 			NumberedEnum e = NumberedEnum.Two;
 
 			// Act
-			long[] enums = e.EnumValues();
+			NumberedEnum[] enums = e.EnumOptions();
 
 			// Assert
 			enums.Length.Should().Be(3);

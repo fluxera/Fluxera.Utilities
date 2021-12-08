@@ -9,7 +9,7 @@ namespace Fluxera.Utilities.Extensions
 		/// <summary>
 		///     Determines if the specified type is a nullable.
 		/// </summary>
-		/// <returns><c>true</c> if is nullable the specified type; otherwise, <c>false</c>.</returns>
+		/// <returns><c>true</c> if the specified type is a nullable; otherwise, <c>false</c>.</returns>
 		/// <param name="type">Type.</param>
 		public static bool IsNullable(this Type type)
 		{

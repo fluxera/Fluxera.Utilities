@@ -10,7 +10,7 @@ namespace Fluxera.Utilities.Extensions
 		/// </summary>
 		/// <typeparam name="T">The Type of the value.</typeparam>
 		/// <param name="value">The value.</param>
-		/// <returns>The default value</returns>
+		/// <returns>The default value.</returns>
 		public static T? GetDefaultValue<T>(this T value)
 		{
 			return default;

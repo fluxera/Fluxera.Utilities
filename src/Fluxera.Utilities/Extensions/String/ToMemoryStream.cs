@@ -9,9 +9,9 @@ namespace Fluxera.Utilities.Extensions
 	public static partial class StringExtensions
 	{
 		/// <summary>
-		///     Converts the string to a memory stream by writing all of its byte to it.
-		///     the stream is rewound after the bytes are written to it. The default encoding
-		///     (<see cref="Encoding.UTF8" />) is used.
+		///     Converts the string to a memory stream. <br/>
+		///     The stream is rewound after the bytes are written to it. <br/>
+		///		<see cref="Encoding.UTF8" />) encoding is used.
 		/// </summary>
 		/// <param name="value">The string to write to the memory steam.</param>
 		/// <returns>The new memory stream containing the bytes of the string.</returns>
@@ -22,9 +22,9 @@ namespace Fluxera.Utilities.Extensions
 		}
 
 		/// <summary>
-		///     Converts the string to a memory stream by writing all of its byte to it.
-		///     the stream is rewound after the bytes are written to it. The given encoding
-		///     is used.
+		///     Converts the string to a memory stream.  <br/>
+		///     The stream is rewound after the bytes are written to it. <br/>
+		///		The given encoding is used.
 		/// </summary>
 		/// <param name="value">The string to write to the memory steam.</param>
 		/// <param name="encoding">The encoding to use.</param>

@@ -7,36 +7,25 @@ namespace Fluxera.Utilities.Extensions
 	public static partial class DateTimeExtensions
 	{
 		/// <summary>
-		///     Returns a period "Morning", "Afternoon", or "Evening".
+		///     Returns the period of the day <see cref="PeriodOfDay.Morning"/>, <see cref="PeriodOfDay.Afternoon"/>, <see cref="PeriodOfDay.Evening"/>.
 		/// </summary>
 		/// <param name="date">The date.</param>
 		/// <returns>The period "morning", "afternoon", or "evening".</returns>
 		public static PeriodOfDay GetPeriodOfDay(this DateTime date)
 		{
-			PeriodOfDay result;
-
 			const int eveningEnds = 2;
 			const int morningEnds = 12;
 			const int afternoonEnds = 18;
 
 			int hour = date.Hour;
 
-			if (hour < eveningEnds)
+			PeriodOfDay result = hour switch
 			{
-				result = PeriodOfDay.Evening;
-			}
-			else if (hour < morningEnds)
-			{
-				result = PeriodOfDay.Morning;
-			}
-			else if (hour < afternoonEnds)
-			{
-				result = PeriodOfDay.Afternoon;
-			}
-			else
-			{
-				result = PeriodOfDay.Evening;
-			}
+				< eveningEnds => PeriodOfDay.Evening,
+				< morningEnds => PeriodOfDay.Morning,
+				< afternoonEnds => PeriodOfDay.Afternoon,
+				_ => PeriodOfDay.Evening
+			};
 
 			return result;
 		}

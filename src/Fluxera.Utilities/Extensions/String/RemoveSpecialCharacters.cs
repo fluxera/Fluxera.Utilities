@@ -9,8 +9,8 @@ namespace Fluxera.Utilities.Extensions
 	public static partial class StringExtensions
 	{
 		/// <summary>
-		///     Removes all special characters from the string. If any special character
-		///     should remain in the string, this character can be given as ignore items.
+		///     Removes all special characters from the string.
+		///     If any special character should remain in the string, this character can be given as ignore items.
 		/// </summary>
 		/// <param name="str">The string to convert.</param>
 		/// <param name="ignore">The characters to ignore when replacing.</param>

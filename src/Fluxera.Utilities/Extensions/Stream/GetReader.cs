@@ -10,7 +10,7 @@ namespace Fluxera.Utilities.Extensions
 	public static partial class StreamExtensions
 	{
 		/// <summary>
-		///     Opens a <see cref="StreamWriter" /> using the default encoding (<see cref="Encoding.UTF8" />).
+		///     Opens a <see cref="StreamReader" /> using the default encoding (<see cref="Encoding.UTF8" />).
 		/// </summary>
 		/// <param name="stream">The stream.</param>
 		/// <returns>The stream reader.</returns>
@@ -21,7 +21,7 @@ namespace Fluxera.Utilities.Extensions
 		}
 
 		/// <summary>
-		///     Opens a <see cref="StreamWriter" /> using the specified encoding.
+		///     Opens a <see cref="StreamReader" /> using the specified encoding.
 		/// </summary>
 		/// <param name="stream">The stream.</param>
 		/// <param name="encoding">The encoding.</param>

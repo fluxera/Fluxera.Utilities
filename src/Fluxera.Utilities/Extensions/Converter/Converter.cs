@@ -15,7 +15,9 @@ namespace Fluxera.Utilities.Extensions
 		/// </summary>
 		/// <param name="value">The internal value.</param>
 		public Converter(T value)
-			: this(value, CultureInfo.CurrentCulture) { }
+			: this(value, CultureInfo.CurrentCulture)
+		{
+		}
 
 		/// <summary>
 		///     Initializes a new instance of the Converter class.

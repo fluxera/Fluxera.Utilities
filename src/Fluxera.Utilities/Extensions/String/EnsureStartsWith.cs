@@ -7,7 +7,7 @@ namespace Fluxera.Utilities.Extensions
 	public static partial class StringExtensions
 	{
 		/// <summary>
-		///     Ensures that the string starts with a given prefix.
+		///     Ensures that a string starts with a given prefix.
 		/// </summary>
 		/// <param name="str">The string to check.</param>
 		/// <param name="prefix">The prefix value to check for.</param>
@@ -20,7 +20,7 @@ namespace Fluxera.Utilities.Extensions
 		}
 
 		/// <summary>
-		///     Ensures that the string starts with a given prefix.
+		///     Ensures that a string starts with a given prefix.
 		/// </summary>
 		/// <param name="str">The string to check.</param>
 		/// <param name="prefix">The prefix value to check for.</param>

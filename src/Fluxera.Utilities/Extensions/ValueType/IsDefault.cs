@@ -8,7 +8,7 @@ namespace Fluxera.Utilities.Extensions
 	public static partial class ValueTypeExtensions
 	{
 		/// <summary>
-		///     Determines whether the specified value is empty (default(T)).
+		///     Determines if the specified value is empty (default(T)).
 		/// </summary>
 		/// <typeparam name="T">The type of the value object.</typeparam>
 		/// <param name="value">The value to check.</param>
@@ -19,7 +19,7 @@ namespace Fluxera.Utilities.Extensions
 		}
 
 		/// <summary>
-		///     Determines whether the specified value is not empty (!default(T)).
+		///     Determines if the specified value is not empty (!default(T)).
 		/// </summary>
 		/// <typeparam name="T">The type of the value object.</typeparam>
 		/// <param name="value">The value to check.</param>

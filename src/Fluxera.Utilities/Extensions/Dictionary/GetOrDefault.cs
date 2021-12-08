@@ -8,12 +8,13 @@ namespace Fluxera.Utilities.Extensions
 	public static partial class DictionaryExtensions
 	{
 		/// <summary>
-		///     Gets a value from the dictionary with given key. Returns default value if can not find.
+		///     Gets a value from the dictionary for the given key.
+		///		Returns <c>default</c> if the value cannot be found.
 		/// </summary>
-		/// <param name="dictionary">Dictionary to check and get</param>
-		/// <param name="key">Key to find the value</param>
-		/// <typeparam name="TKey">Type of the key</typeparam>
-		/// <typeparam name="TValue">Type of the value</typeparam>
+		/// <param name="dictionary">Dictionary to check and get from.</param>
+		/// <param name="key">Key to find the value.</param>
+		/// <typeparam name="TKey">Type of the key.</typeparam>
+		/// <typeparam name="TValue">Type of the value.</typeparam>
 		/// <returns>Value if found, default if can not found.</returns>
 		public static TValue? GetOrDefault<TKey, TValue>(this Dictionary<TKey, TValue> dictionary, TKey key)
 		{
@@ -21,12 +22,13 @@ namespace Fluxera.Utilities.Extensions
 		}
 
 		/// <summary>
-		///     Gets a value from the dictionary with given key. Returns default value if can not find.
+		///     Gets a value from the dictionary for the given key.
+		///		Returns <c>default</c> if the value cannot be found.
 		/// </summary>
-		/// <param name="dictionary">Dictionary to check and get</param>
-		/// <param name="key">Key to find the value</param>
-		/// <typeparam name="TKey">Type of the key</typeparam>
-		/// <typeparam name="TValue">Type of the value</typeparam>
+		/// <param name="dictionary">Dictionary to check and get from.</param>
+		/// <param name="key">Key to find the value.</param>
+		/// <typeparam name="TKey">Type of the key.</typeparam>
+		/// <typeparam name="TValue">Type of the value.</typeparam>
 		/// <returns>Value if found, default if can not found.</returns>
 		public static TValue? GetOrDefault<TKey, TValue>(this IDictionary<TKey, TValue> dictionary, TKey key)
 		{
@@ -34,12 +36,13 @@ namespace Fluxera.Utilities.Extensions
 		}
 
 		/// <summary>
-		///     Gets a value from the dictionary with given key. Returns default value if can not find.
+		///     Gets a value from the dictionary for the given key.
+		///		Returns <c>default</c> if the value cannot be found.
 		/// </summary>
-		/// <param name="dictionary">Dictionary to check and get</param>
-		/// <param name="key">Key to find the value</param>
-		/// <typeparam name="TKey">Type of the key</typeparam>
-		/// <typeparam name="TValue">Type of the value</typeparam>
+		/// <param name="dictionary">Dictionary to check and get from.</param>
+		/// <param name="key">Key to find the value.</param>
+		/// <typeparam name="TKey">Type of the key.</typeparam>
+		/// <typeparam name="TValue">Type of the value.</typeparam>
 		/// <returns>Value if found, default if can not found.</returns>
 		public static TValue? GetOrDefault<TKey, TValue>(this IReadOnlyDictionary<TKey, TValue> dictionary, TKey key)
 		{
@@ -47,12 +50,13 @@ namespace Fluxera.Utilities.Extensions
 		}
 
 		/// <summary>
-		///     Gets a value from the dictionary with given key. Returns default value if can not find.
+		///     Gets a value from the dictionary for the given key.
+		///		Returns <c>default</c> if the value cannot be found.
 		/// </summary>
-		/// <param name="dictionary">Dictionary to check and get</param>
-		/// <param name="key">Key to find the value</param>
-		/// <typeparam name="TKey">Type of the key</typeparam>
-		/// <typeparam name="TValue">Type of the value</typeparam>
+		/// <param name="dictionary">Dictionary to check and get from.</param>
+		/// <param name="key">Key to find the value.</param>
+		/// <typeparam name="TKey">Type of the key.</typeparam>
+		/// <typeparam name="TValue">Type of the value.</typeparam>
 		/// <returns>Value if found, default if can not found.</returns>
 		public static TValue? GetOrDefault<TKey, TValue>(this ConcurrentDictionary<TKey, TValue> dictionary, TKey key)
 		{

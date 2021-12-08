@@ -8,7 +8,7 @@ namespace Fluxera.Utilities.Extensions
 	public static partial class ObjectExtensions
 	{
 		/// <summary>
-		///     Returns <code>true</code>, if specified target reference is equals with null reference.
+		///     Returns <code>true</code>, if the specified target reference is equal to the null reference.
 		///     Otherwise returns <code>false</code>.
 		/// </summary>
 		/// <param name="target">Target reference. Can be null.</param>
@@ -20,7 +20,7 @@ namespace Fluxera.Utilities.Extensions
 		}
 
 		/// <summary>
-		///     Returns <code>true</code>, if specified target reference is equals with null reference.
+		///     Returns <code>true</code>, if the specified target reference is equal to the null reference.
 		///     Otherwise returns <code>false</code>.
 		/// </summary>
 		/// <typeparam name="T">Type of target.</typeparam>
@@ -33,7 +33,7 @@ namespace Fluxera.Utilities.Extensions
 		}
 
 		/// <summary>
-		///     Returns <code>true</code>, if specified target reference is equals with null reference.
+		///     Returns <code>true</code>, if the specified target reference is not equal to the null reference.
 		///     Otherwise returns <code>false</code>.
 		/// </summary>
 		/// <param name="target">Target reference. Can be null.</param>
@@ -45,7 +45,7 @@ namespace Fluxera.Utilities.Extensions
 		}
 
 		/// <summary>
-		///     Returns <code>true</code>, if specified target reference is equals with null reference.
+		///     Returns <code>true</code>, if the specified target reference is not equal to the null reference.
 		///     Otherwise returns <code>false</code>.
 		/// </summary>
 		/// <typeparam name="T">Type of target.</typeparam>

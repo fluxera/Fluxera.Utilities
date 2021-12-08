@@ -2,7 +2,6 @@
 
 namespace Fluxera.Utilities.Extensions
 {
-	using System;
 	using System.IO;
 	using System.Reflection;
 	using System.Threading.Tasks;
@@ -13,7 +12,7 @@ namespace Fluxera.Utilities.Extensions
 	public static partial class AssemblyExtensions
 	{
 		/// <summary>
-		///     Gets the content of the given resource location as string.
+		///     Gets the content of the given embedded resource location as string.
 		/// </summary>
 		/// <param name="assembly">The assembly to use.</param>
 		/// <param name="resourceLocation">The location of the resource.</param>
@@ -24,7 +23,7 @@ namespace Fluxera.Utilities.Extensions
 
 			string result = string.Empty;
 
-			await using (Stream stream = assembly.GetManifestResourceStream(resourceLocation))
+			await using (Stream? stream = assembly.GetManifestResourceStream(resourceLocation))
 			{
 				if (stream != null && stream.CanRead)
 				{

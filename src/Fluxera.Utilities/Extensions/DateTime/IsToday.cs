@@ -7,7 +7,7 @@ namespace Fluxera.Utilities.Extensions
 	public static partial class DateTimeExtensions
 	{
 		/// <summary>
-		///     Indicates whether the date is today.
+		///     Determines if the date is <see cref="DateTime.Today"/>.
 		/// </summary>
 		/// <param name="date">The date.</param>
 		/// <returns>True, if the specified date is today.</returns>

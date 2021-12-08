@@ -10,18 +10,16 @@ namespace Fluxera.Utilities.Extensions
 		/// <summary>
 		///     Gets a substring of a string from beginning of the string.
 		/// </summary>
-		/// <exception cref="ArgumentNullException">Thrown if <paramref name="str" /> is null</exception>
-		/// <exception cref="ArgumentException">Thrown if <paramref name="len" /> is bigger that string's length</exception>
-		public static string Left(this string str, int len)
+		public static string Left(this string str, int length)
 		{
 			Guard.Against.NullOrWhiteSpace(str, nameof(str));
 
-			if(str.Length < len)
+			if(str.Length < length)
 			{
-				throw new ArgumentException("len argument can not be bigger than given string's length!");
+				throw new ArgumentException("Value cannot be bigger than the length of the given string.", nameof(length));
 			}
 
-			return str.Substring(0, len);
+			return str.Substring(0, length);
 		}
 	}
 }

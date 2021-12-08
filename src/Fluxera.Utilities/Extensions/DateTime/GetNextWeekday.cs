@@ -12,11 +12,6 @@ namespace Fluxera.Utilities.Extensions
 		/// <param name="date">The base date.</param>
 		/// <param name="weekday">The desired weekday.</param>
 		/// <returns>The calculated date.</returns>
-		/// <example>
-		///     <code>
-		/// 		DateTime lastMonday = DateTime.Now.GetNextWeekday(DayOfWeek.Monday);
-		/// 	</code>
-		/// </example>
 		public static DateTime GetNextWeekday(this DateTime date, DayOfWeek weekday)
 		{
 			while (date.DayOfWeek != weekday)

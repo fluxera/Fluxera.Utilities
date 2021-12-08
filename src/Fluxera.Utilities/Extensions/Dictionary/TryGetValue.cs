@@ -7,13 +7,13 @@ namespace Fluxera.Utilities.Extensions
 	public static partial class DictionaryExtensions
 	{
 		/// <summary>
-		///     This method is used to try to get a value in a dictionary if it does exists.
+		///     Try to get a value from a dictionary.
 		/// </summary>
-		/// <typeparam name="T">Type of the value</typeparam>
-		/// <param name="dictionary">The collection object</param>
-		/// <param name="key">Key</param>
-		/// <param name="value">Value of the key (or default value if key not exists)</param>
-		/// <returns>True if key does exists in the dictionary</returns>
+		/// <typeparam name="T">Type of the value.</typeparam>
+		/// <param name="dictionary">The dictionary to check and get from.</param>
+		/// <param name="key">The key of the value.</param>
+		/// <param name="value">Value for key (or default value if key not exists).</param>
+		/// <returns>True if key does exists in the dictionary.</returns>
 		internal static bool TryGetValue<T>(this IDictionary<string, object> dictionary, string key, out T? value)
 		{
 			if (dictionary.TryGetValue(key, out object valueObj) && valueObj is T obj)

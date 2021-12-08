@@ -20,18 +20,11 @@ namespace Fluxera.Utilities.Extensions
 		}
 
 		/// <summary>
-		///     Converts the string to a byte-array using the supplied encoding.
+		///     Converts the string to a byte-array using the given encoding.
 		/// </summary>
 		/// <param name="str">The input string.</param>
 		/// <param name="encoding">The encoding to be used.</param>
 		/// <returns>The created byte array.</returns>
-		/// <example>
-		///     <code>
-		/// 		string value = "Hello World";
-		/// 		byte[] ansiBytes = value.ToBytes(Encoding.GetEncoding(1252)); // 1252 = ANSI
-		/// 		byte[] utf8Bytes = value.ToBytes(Encoding.UTF8);
-		/// 	</code>
-		/// </example>
 		public static byte[] GetBytes(this string str, Encoding encoding)
 		{
 			Guard.Against.NullOrWhiteSpace(str, nameof(str));

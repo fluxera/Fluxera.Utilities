@@ -9,7 +9,7 @@ namespace Fluxera.Utilities.Extensions
 	public static partial class EnumerableExtensions
 	{
 		/// <summary>
-		///     Checks if a given enumerable is not null or empty.
+		///     Checks if the enumerable is not null or empty.
 		/// </summary>
 		/// <typeparam name="T">The generic type of the enumerable.</typeparam>
 		/// <param name="enumerable">An IEnumerable<typeparamref name="T" /></param>
@@ -21,7 +21,7 @@ namespace Fluxera.Utilities.Extensions
 		}
 
 		/// <summary>
-		///     Checks if a given enumerable is null or empty.
+		///     Checks if then enumerable is null or empty.
 		/// </summary>
 		/// <typeparam name="T">The generic type of the enumerable.</typeparam>
 		/// <param name="enumerable">An IEnumerable<typeparamref name="T" /></param>

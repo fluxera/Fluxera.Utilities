@@ -5,9 +5,9 @@ namespace Fluxera.Utilities.Extensions
 	public static partial class NumericExtensions
 	{
 		/// <summary>
-		///     Determines if is between the specified value a b (inclusive).
+		///     Determines if the given value is between the specified values a and b (inclusive).
 		/// </summary>
-		/// <returns><c>true</c> if is between the specified value a b; otherwise, <c>false</c>.</returns>
+		/// <returns><c>true</c> if the given value is between the specified values a and b; otherwise, <c>false</c>.</returns>
 		/// <param name="value">Value.</param>
 		/// <param name="a">The alpha component.</param>
 		/// <param name="b">The blue component.</param>
@@ -19,9 +19,9 @@ namespace Fluxera.Utilities.Extensions
 		}
 
 		/// <summary>
-		///     Determines if is between the specified value a b (inclusive).
+		///     Determines if the given value is between the specified values a and b (inclusive).
 		/// </summary>
-		/// <returns><c>true</c> if is between the specified value a b; otherwise, <c>false</c>.</returns>
+		/// <returns><c>true</c> if the given value is between the specified values a and b; otherwise, <c>false</c>.</returns>
 		/// <param name="value">Value.</param>
 		/// <param name="a">The alpha component.</param>
 		/// <param name="b">The blue component.</param>
@@ -33,9 +33,9 @@ namespace Fluxera.Utilities.Extensions
 		}
 
 		/// <summary>
-		///     Determines if is between the specified value a b (inclusive).
+		///     Determines if the given value is between the specified values a and b (inclusive).
 		/// </summary>
-		/// <returns><c>true</c> if is between the specified value a b; otherwise, <c>false</c>.</returns>
+		/// <returns><c>true</c> if the given value is between the specified values a and b; otherwise, <c>false</c>.</returns>
 		/// <param name="value">Value.</param>
 		/// <param name="a">The alpha component.</param>
 		/// <param name="b">The blue component.</param>
@@ -47,9 +47,9 @@ namespace Fluxera.Utilities.Extensions
 		}
 
 		/// <summary>
-		///     Determines if is between the specified value a b (inclusive).
+		///     Determines if the given value is between the specified values a and b (inclusive).
 		/// </summary>
-		/// <returns><c>true</c> if is between the specified value a b; otherwise, <c>false</c>.</returns>
+		/// <returns><c>true</c> if the given value is between the specified values a and b; otherwise, <c>false</c>.</returns>
 		/// <param name="value">Value.</param>
 		/// <param name="a">The alpha component.</param>
 		/// <param name="b">The blue component.</param>

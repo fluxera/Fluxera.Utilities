@@ -9,8 +9,7 @@ namespace Fluxera.Utilities.Extensions
 	public static partial class TypeExtensions
 	{
 		/// <summary>
-		///     Returns true of the supplied <paramref name="type" /> implements the given
-		///     <typeparamref name="T" />.
+		///     Returns true of the supplied <paramref name="type" /> implements the given interface type <typeparamref name="T" />.
 		/// </summary>
 		/// <typeparam name="T">The type (interface) to check for.</typeparam>
 		/// <param name="type">The type to check.</param>
@@ -21,8 +20,7 @@ namespace Fluxera.Utilities.Extensions
 		}
 
 		/// <summary>
-		///     Returns true of the supplied <paramref name="type" /> implements the given
-		///     interface type.
+		///     Returns true of the supplied <paramref name="type" /> implements the given interface type.
 		/// </summary>
 		/// <param name="type">The type to check.</param>
 		/// <param name="interfaceType">The type (interface) to check for.</param>

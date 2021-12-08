@@ -8,8 +8,8 @@ namespace Fluxera.Utilities.Extensions
 	public static partial class StringExtensions
 	{
 		/// <summary>
-		///     Converts the string to a matching enum value fro the given enum.
-		///     The case of the string is ignored.
+		///     Converts the string to a matching enum value of a given enum type.
+		///		The case of the string is ignored.
 		/// </summary>
 		/// <typeparam name="TEnum">The type of the target enum.</typeparam>
 		/// <param name="value">The string to convert.</param>
@@ -21,7 +21,7 @@ namespace Fluxera.Utilities.Extensions
 		}
 
 		/// <summary>
-		///     Converts the string to a matching enum value fro the given enum.
+		///     Converts the string to a matching enum value of a given enum type.
 		/// </summary>
 		/// <typeparam name="TEnum">The type of the target enum.</typeparam>
 		/// <param name="value">The string to convert.</param>
@@ -36,7 +36,7 @@ namespace Fluxera.Utilities.Extensions
 		}
 
 		/// <summary>
-		///     Converts the string to a matching enum value fro the given enum.
+		///     Converts the string to a matching enum value of a given enum type.
 		///     The case of the string is ignored. Returns null in case of parse error.
 		/// </summary>
 		/// <typeparam name="TEnum">The type of the target enum.</typeparam>
@@ -48,7 +48,7 @@ namespace Fluxera.Utilities.Extensions
 		}
 
 		/// <summary>
-		///     Converts the string to a matching enum value fro the given enum.
+		///     Converts the string to a matching enum value of a given enum type.
 		///     Returns null in case of parse error.
 		/// </summary>
 		/// <typeparam name="TEnum">The type of the target enum.</typeparam>

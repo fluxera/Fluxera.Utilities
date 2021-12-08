@@ -8,8 +8,7 @@ namespace Fluxera.Utilities.Extensions
 	public static partial class DateTimeExtensions
 	{
 		/// <summary>
-		///     Gets the week number for a provided date time value based on the current
-		///     culture settings.
+		///     Gets the week number for a provided date time value based on the current culture settings.
 		/// </summary>
 		/// <param name="dateTime">The date time.</param>
 		/// <returns>The week number.</returns>

@@ -8,13 +8,10 @@ namespace Fluxera.Utilities.Extensions
 	public static partial class ReflectionExtensions
 	{
 		/// <summary>
-		///     Determines if current member is a property setter.
+		///     Determines if the given method is a property setter.
 		/// </summary>
-		/// <param name="method">The member to determine if it's a property setter</param>
-		/// <returns>
-		///     <codeInline>true</codeInline> if it's a property setter, <codeInline>false</codeInline> if it's not a property
-		///     setter
-		/// </returns>
+		/// <param name="method">The member to determine if it's a property setter.</param>
+		/// <returns><c>true</c> if it's a property setter, <c>false</c> if it's not a property setter.</returns>
 		public static bool IsPropertySetter(this MethodInfo method)
 		{
 			return method.IsSpecialName && method.Name.StartsWith("set_", StringComparison.Ordinal);

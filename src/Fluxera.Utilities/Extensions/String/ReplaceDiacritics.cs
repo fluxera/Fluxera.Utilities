@@ -9,7 +9,7 @@ namespace Fluxera.Utilities.Extensions
 	public static partial class StringExtensions
 	{
 		/// <summary>
-		///     Replaces all diacritical marks with a ascii representation.
+		///     Replaces all diacritical marks with an ascii representation.
 		/// </summary>
 		/// <param name="str">The string to convert.</param>
 		/// <returns>The string without diacritical marks.</returns>

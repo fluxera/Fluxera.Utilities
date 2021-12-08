@@ -9,7 +9,7 @@ namespace Fluxera.Utilities.Extensions
 	public static partial class StringExtensions
 	{
 		/// <summary>
-		///     Removes first occurrence of the given prefixes from beginning of the given string.
+		///     Removes the first occurrence of the given prefixes from the beginning of the given string.
 		/// </summary>
 		/// <param name="str">The string.</param>
 		/// <param name="preFixes">one or more prefix.</param>
@@ -20,7 +20,7 @@ namespace Fluxera.Utilities.Extensions
 		}
 
 		/// <summary>
-		///     Removes first occurrence of the given prefixes from beginning of the given string.
+		///     Removes the first occurrence of the given prefixes from the beginning of the given string.
 		/// </summary>
 		/// <param name="str">The string.</param>
 		/// <param name="comparisonType">String comparison type</param>

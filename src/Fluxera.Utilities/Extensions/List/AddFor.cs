@@ -11,8 +11,7 @@ namespace Fluxera.Utilities.Extensions
 	public static partial class ListExtensions
 	{
 		/// <summary>
-		///     Adds a given values from the given values to the target list if
-		///     the value matches the given predicate.
+		///     Adds the given value to the target list if the value matches the given predicate.
 		/// </summary>
 		/// <typeparam name="T">The type of the elements.</typeparam>
 		/// <param name="target">The target list to add the elements to.</param>

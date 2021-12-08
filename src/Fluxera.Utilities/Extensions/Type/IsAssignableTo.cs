@@ -8,7 +8,7 @@ namespace Fluxera.Utilities.Extensions
 	public static partial class TypeExtensions
 	{
 		/// <summary>
-		///     Checks if <see cref="Type" /> <see cref="from" /> is assignable ti <see cref="Type" /> <see cref="to" />.
+		///     Checks if <see cref="Type" /> <see cref="from" /> is assignable to <see cref="Type" /> <see cref="to" />.
 		/// </summary>
 		/// <param name="from"></param>
 		/// <param name="to"></param>

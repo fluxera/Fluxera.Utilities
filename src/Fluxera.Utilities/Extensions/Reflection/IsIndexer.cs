@@ -9,8 +9,8 @@ namespace Fluxera.Utilities.Extensions
 		/// <summary>
 		///     Determines if the given property is an indexer.
 		/// </summary>
-		/// <param name="property">The whole property to check</param>
-		/// <returns><literal>true</literal> if it's an indexer, <literal>false</literal> if it's not an indexer</returns>
+		/// <param name="property">The whole property to check.</param>
+		/// <returns><c>true</c> if it's an indexer, <c>false</c> if it's not an indexer.</returns>
 		public static bool IsIndexer(this PropertyInfo property)
 		{
 			return property.GetIndexParameters().Length > 0;

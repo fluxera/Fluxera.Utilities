@@ -7,11 +7,11 @@ namespace Fluxera.Utilities.Extensions
 	public static partial class EnumExtensions
 	{
 		/// <summary>
-		///     Gets all values of the enum.
+		///     Gets all options of the enum.
 		/// </summary>
-		public static long[] EnumValues<TEnum>(this TEnum @enum) where TEnum : struct, Enum
+		public static TEnum[] EnumOptions<TEnum>(this TEnum @enum) where TEnum : struct, Enum
 		{
-			return EnumTraits<TEnum>.EnumValues();
+			return EnumTraits<TEnum>.EnumOptions();
 		}
 	}
 }

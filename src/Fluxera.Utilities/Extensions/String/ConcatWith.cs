@@ -21,8 +21,7 @@ namespace Fluxera.Utilities.Extensions
 		}
 
 		/// <summary>
-		///     Concatenates the string value with the given additional strings and delimiter
-		///     character.
+		///     Concatenates the string value with the given additional strings and delimiter character.
 		/// </summary>
 		/// <param name="str">The string value to concatenate to.</param>
 		/// <param name="delimiter">The delimiter character between each element.</param>

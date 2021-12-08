@@ -39,18 +39,5 @@
 			// Assert
 			result.Should().Be("Hello 5,000.00 World!");
 		}
-
-		[Test]
-		public void ShouldFormatWithInvariantCulture()
-		{
-			// Arrange
-			string str = "Hello {0:N} World!";
-
-			// Act
-			string result = str.FormatInvariantWith(5000);
-
-			// Assert
-			result.Should().Be("Hello 5,000.00 World!");
-		}
 	}
 }

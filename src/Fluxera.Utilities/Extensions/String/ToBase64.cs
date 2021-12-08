@@ -4,7 +4,6 @@ namespace Fluxera.Utilities.Extensions
 {
 	using System;
 	using System.Text;
-	using System.Text.RegularExpressions;
 
 	public static partial class StringExtensions
 	{

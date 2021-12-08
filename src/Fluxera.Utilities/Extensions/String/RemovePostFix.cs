@@ -3,13 +3,11 @@
 namespace Fluxera.Utilities.Extensions
 {
 	using System;
-	using System.Linq;
-	using Guards;
 
 	public static partial class StringExtensions
 	{
 		/// <summary>
-		///     Removes first occurrence of the given postfixes from end of the given string.
+		///     Removes the first occurrence of the given postfixes from the end of the given string.
 		/// </summary>
 		/// <param name="str">The string.</param>
 		/// <param name="postFixes">one or more postfix.</param>
@@ -20,7 +18,7 @@ namespace Fluxera.Utilities.Extensions
 		}
 
 		/// <summary>
-		///     Removes first occurrence of the given postfixes from end of the given string.
+		///     Removes the first occurrence of the given postfixes from the end of the given string.
 		/// </summary>
 		/// <param name="str">The string.</param>
 		/// <param name="comparisonType">String comparison type</param>

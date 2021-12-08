@@ -7,8 +7,11 @@ namespace Fluxera.Utilities.Extensions
 	public static partial class StringExtensions
 	{
 		/// <summary>
-		///     https://petedavis.io/blog/url-encoding-password-reset-or-email-confirmation-tokens
+		///		Encodes the given string for safe usage in URLs, f.e. for password reset or email confirmation tokens.
 		/// </summary>
+		/// <remarks>
+		///		https://petedavis.io/blog/url-encoding-password-reset-or-email-confirmation-tokens
+		/// </remarks>
 		public static string UrlSafeDecode(this string str)
 		{
 			Guard.Against.NullOrWhiteSpace(str, nameof(str));

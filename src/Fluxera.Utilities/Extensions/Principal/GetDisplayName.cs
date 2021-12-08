@@ -9,10 +9,10 @@ namespace Fluxera.Utilities.Extensions
 	public static partial class PrincipalExtensions
 	{
 		/// <summary>
-		/// Gets the name.
+		///     Gets the display name from the <see cref="ClaimsIdentity" /> or uses the subject.
 		/// </summary>
 		/// <param name="principal">The principal.</param>
-		/// <returns></returns>
+		/// <returns>The display name.</returns>
 		[DebuggerStepThrough]
 		public static string GetDisplayName(this ClaimsPrincipal principal)
 		{
@@ -25,7 +25,7 @@ namespace Fluxera.Utilities.Extensions
 			}
 
 			Claim sub = principal.FindFirst("sub");
-			if (sub != null)
+			if(sub != null)
 			{
 				return sub.Value;
 			}

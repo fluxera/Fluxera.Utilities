@@ -7,7 +7,7 @@ namespace Fluxera.Utilities.Extensions
 	public static partial class TypeExtensions
 	{
 		/// <summary>
-		/// Gets the type without nullable.
+		///     Gets the type without nullable if the type is a <see cref="Nullable{T}" />.
 		/// </summary>
 		/// <param name="type">The type.</param>
 		/// <returns></returns>
@@ -17,11 +17,11 @@ namespace Fluxera.Utilities.Extensions
 		}
 
 		/// <summary>
-		/// Gets the type without nullable.
+		///     Gets the type without nullable if the type is a <see cref="Nullable{T}" />..
 		/// </summary>
 		/// <param name="type">The type.</param>
 		/// <returns></returns>
-		[Obsolete("Use UnwrapNullableType()")]
+		[Obsolete("Use type.UnwrapNullableType()")]
 		public static Type GetTypeWithoutNullable(this Type type)
 		{
 			return type.UnwrapNullableType();

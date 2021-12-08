@@ -9,7 +9,7 @@ namespace Fluxera.Utilities.Extensions
 	public static partial class StringExtensions
 	{
 		/// <summary>
-		///     Uses string.Split method to split given string by given separator.
+		///     Uses <see cref="string.Split(string[], StringSplitOptions)"/> method to split given string by given separator.
 		/// </summary>
 		public static string[] Split(this string str, string separator)
 		{
@@ -17,7 +17,7 @@ namespace Fluxera.Utilities.Extensions
 		}
 
 		/// <summary>
-		///     Uses string.Split method to split given string by given separator.
+		///     Uses <see cref="string.Split(string[], StringSplitOptions)"/> method to split given string by given separator.
 		/// </summary>
 		public static string[] Split(this string str, string separator, StringSplitOptions options)
 		{
