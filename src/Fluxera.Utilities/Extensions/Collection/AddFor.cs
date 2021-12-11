@@ -5,10 +5,8 @@ namespace Fluxera.Utilities.Extensions
 	using System;
 	using System.Collections.Generic;
 	using Guards;
-	using JetBrains.Annotations;
 
-	[PublicAPI]
-	public static partial class ListExtensions
+	public static partial class CollectionExtensions
 	{
 		/// <summary>
 		///     Adds the given value to the target list if the value matches the given predicate.
@@ -17,7 +15,7 @@ namespace Fluxera.Utilities.Extensions
 		/// <param name="target">The target list to add the elements to.</param>
 		/// <param name="value">The element to add.</param>
 		/// <param name="predicate">The predicate to match by the elements to add.</param>
-		public static void AddFor<T>(this IList<T> target, T value, Predicate<T> predicate)
+		public static void AddFor<T>(this ICollection<T> target, T value, Predicate<T> predicate)
 		{
 			Guard.Against.Null(target, nameof(target));
 
