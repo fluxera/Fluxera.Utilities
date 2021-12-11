@@ -1,9 +1,9 @@
-﻿namespace Fluxera.Utilities.UnitTests.Extensions.List
+﻿namespace Fluxera.Utilities.UnitTests.Extensions.Collection
 {
 	using System.Collections.Generic;
 	using FluentAssertions;
+	using Fluxera.Utilities.Extensions;
 	using NUnit.Framework;
-	using Utilities.Extensions;
 
 	[TestFixture]
 	public class AddRangeForTests
@@ -12,7 +12,7 @@
 		public void ShouldAddRangeFilteredToList()
 		{
 			// Arrange
-			IList<string> list = new List<string>();
+			ICollection<string> list = new List<string>();
 
 			// Act
 			list.AddRangeFor(new List<string>

@@ -2,9 +2,7 @@
 
 namespace Fluxera.Utilities.Extensions
 {
-	using System;
 	using System.Collections.Generic;
-	using System.Linq;
 	using Guards;
 
 	public static partial class ListExtensions
