@@ -1,14 +1,16 @@
 // ReSharper disable once CheckNamespace
+
 namespace Fluxera.Utilities
 {
 	using System;
+	using System.Threading.Tasks;
 	using JetBrains.Annotations;
 
 	/// <summary>
 	///     A base class for disposable objects.
 	/// </summary>
 	[PublicAPI]
-	public abstract class Disposable : IDisposable// TODO: IAsyncDisposable
+	public abstract class Disposable : IDisposable, IAsyncDisposable
 	{
 		/// <summary>
 		///     Creates a new instance of the <see cref="Disposable" /> type.
@@ -23,6 +25,26 @@ namespace Fluxera.Utilities
 		/// </summary>
 		/// <value><c>true</c> if disposed; otherwise <c>false</c>.</value>
 		protected bool IsDisposed { get; private set; }
+
+		/// <inheritdoc />
+		ValueTask IAsyncDisposable.DisposeAsync()
+		{
+			try
+			{
+				// Dispose all managed and unmanaged resources.
+				this.Dispose(true);
+
+				return default;
+			}
+			catch(Exception exception)
+			{
+				// Take this object off the finalization queue and prevent finalization code for this
+				// object from executing a second time.
+				GC.SuppressFinalize(this);
+
+				return new ValueTask(Task.FromException(exception));
+			}
+		}
 
 		/// <summary>
 		///     Immediately releases all resources owned by the object.
