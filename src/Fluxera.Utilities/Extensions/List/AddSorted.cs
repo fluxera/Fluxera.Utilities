@@ -3,8 +3,10 @@
 namespace Fluxera.Utilities.Extensions
 {
 	using System.Collections.Generic;
-	using Guards;
+	using Fluxera.Guards;
+	using JetBrains.Annotations;
 
+	[PublicAPI]
 	public static partial class ListExtensions
 	{
 		/// <summary>
@@ -22,7 +24,7 @@ namespace Fluxera.Utilities.Extensions
 			comparer ??= Comparer<T>.Default;
 
 			int position = target.BinarySearch(item, comparer);
-			if (position < 0)
+			if(position < 0)
 			{
 				position = ~position;
 			}
