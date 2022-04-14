@@ -15,19 +15,19 @@ namespace Fluxera.Utilities.Extensions
 		/// </returns>
 		public static bool IsNumeric(this Type type)
 		{
-			Type targetType = type.UnwrapNullableType();
+			type = type.UnwrapNullableType();
 			return
-				(targetType == typeof(sbyte)) ||
-				(targetType == typeof(byte)) ||
-				(targetType == typeof(short)) ||
-				(targetType == typeof(ushort)) ||
-				(targetType == typeof(int)) ||
-				(targetType == typeof(uint)) ||
-				(targetType == typeof(long)) ||
-				(targetType == typeof(ulong)) ||
-				(targetType == typeof(decimal)) ||
-				(targetType == typeof(float)) ||
-				(targetType == typeof(double));
+				(type == typeof(sbyte)) ||
+				(type == typeof(byte)) ||
+				(type == typeof(short)) ||
+				(type == typeof(ushort)) ||
+				(type == typeof(int)) ||
+				(type == typeof(uint)) ||
+				(type == typeof(long)) ||
+				(type == typeof(ulong)) ||
+				(type == typeof(decimal)) ||
+				(type == typeof(float)) ||
+				(type == typeof(double));
 		}
 	}
 }

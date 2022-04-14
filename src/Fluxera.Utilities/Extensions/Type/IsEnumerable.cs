@@ -4,7 +4,6 @@ namespace Fluxera.Utilities.Extensions
 {
 	using System;
 	using System.Collections;
-	using System.Reflection;
 
 	public static partial class TypeExtensions
 	{
@@ -15,7 +14,7 @@ namespace Fluxera.Utilities.Extensions
 		/// <param name="type">Type.</param>
 		public static bool IsEnumerable(this Type type)
 		{
-			return typeof(IEnumerable).GetTypeInfo().IsAssignableFrom(type);
+			return typeof(IEnumerable).IsAssignableFrom(type);
 		}
 	}
 }
