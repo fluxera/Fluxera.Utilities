@@ -54,7 +54,7 @@ stages:
       displayName: 'Publish Package Artifacts'
       inputs:
         PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-        ArtifactName: 'drop'
+        ArtifactName: 'packages'
         publishLocation: 'Container'
 
 - stage: PublishPackages
