@@ -4,6 +4,9 @@ namespace Fluxera.Utilities.Extensions
 {
 	using System;
 
+	/// <summary>
+	///     Extension methods for the <see cref="DateTime" /> type.
+	/// </summary>
 	public static partial class DateTimeExtensions
 	{
 		/// <summary>
@@ -14,7 +17,7 @@ namespace Fluxera.Utilities.Extensions
 		/// <returns>The calculated date.</returns>
 		public static DateTime GetNextWeekday(this DateTime date, DayOfWeek weekday)
 		{
-			while (date.DayOfWeek != weekday)
+			while(date.DayOfWeek != weekday)
 			{
 				date = date.AddDays(1);
 			}

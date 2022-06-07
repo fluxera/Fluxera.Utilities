@@ -4,8 +4,11 @@ namespace Fluxera.Utilities.Extensions
 {
 	using System.Diagnostics;
 	using System.Security.Principal;
-	using Guards;
+	using Fluxera.Guards;
 
+	/// <summary>
+	///     Extension methods for the <see cref="IPrincipal" /> type.
+	/// </summary>
 	public static partial class PrincipalExtensions
 	{
 		/// <summary>
@@ -18,7 +21,7 @@ namespace Fluxera.Utilities.Extensions
 		{
 			Guard.Against.Null(principal, nameof(principal));
 
-			return (principal.Identity != null) && principal.Identity.IsAuthenticated;
+			return principal.Identity != null && principal.Identity.IsAuthenticated;
 		}
 	}
 }

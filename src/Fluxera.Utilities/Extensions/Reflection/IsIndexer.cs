@@ -4,6 +4,9 @@ namespace Fluxera.Utilities.Extensions
 {
 	using System.Reflection;
 
+	/// <summary>
+	///     Extension methods for the <see cref="PropertyInfo" /> type.
+	/// </summary>
 	public static partial class ReflectionExtensions
 	{
 		/// <summary>

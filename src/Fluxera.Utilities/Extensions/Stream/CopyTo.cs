@@ -4,8 +4,11 @@ namespace Fluxera.Utilities.Extensions
 {
 	using System;
 	using System.IO;
-	using Guards;
+	using Fluxera.Guards;
 
+	/// <summary>
+	///     Extension methods for the <see cref="Stream" /> type.
+	/// </summary>
 	public static partial class StreamExtensions
 	{
 		/// <summary>
@@ -37,7 +40,7 @@ namespace Fluxera.Utilities.Extensions
 			byte[] buffer = new byte[bufferSize];
 			int bytesRead;
 
-			while ((bytesRead = stream.Read(buffer, 0, bufferSize)) > 0)
+			while((bytesRead = stream.Read(buffer, 0, bufferSize)) > 0)
 			{
 				targetStream.Write(buffer, 0, bytesRead);
 			}

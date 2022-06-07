@@ -5,6 +5,9 @@ namespace Fluxera.Utilities.Extensions
 	using System;
 	using JetBrains.Annotations;
 
+	/// <summary>
+	///     Extension methods for the <see cref="DateTime" /> type.
+	/// </summary>
 	[PublicAPI]
 	public static partial class DateTimeExtensions
 	{
@@ -27,9 +30,9 @@ namespace Fluxera.Utilities.Extensions
 		public static int CalculateAge(this DateTime dateOfBirth, DateTime referenceDate)
 		{
 			int years = referenceDate.Year - dateOfBirth.Year;
-			if (referenceDate.Month < dateOfBirth.Month ||
-				referenceDate.Month == dateOfBirth.Month &&
-				referenceDate.Day < dateOfBirth.Day)
+			if(referenceDate.Month < dateOfBirth.Month ||
+			   referenceDate.Month == dateOfBirth.Month &&
+			   referenceDate.Day < dateOfBirth.Day)
 			{
 				years--;
 			}

@@ -2,8 +2,11 @@
 
 namespace Fluxera.Utilities.Extensions
 {
-	using Guards;
+	using Fluxera.Guards;
 
+	/// <summary>
+	///     Extension methods for numeric types.
+	/// </summary>
 	public static partial class NumericExtensions
 	{
 		/// <summary>

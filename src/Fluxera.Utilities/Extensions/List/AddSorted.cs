@@ -6,6 +6,9 @@ namespace Fluxera.Utilities.Extensions
 	using Fluxera.Guards;
 	using JetBrains.Annotations;
 
+	/// <summary>
+	///     Extension methods for the <see cref="List{T}" /> type.
+	/// </summary>
 	[PublicAPI]
 	public static partial class ListExtensions
 	{

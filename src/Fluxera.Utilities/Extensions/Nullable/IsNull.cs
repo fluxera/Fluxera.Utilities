@@ -2,10 +2,14 @@
 
 namespace Fluxera.Utilities.Extensions
 {
+	using System;
 	using JetBrains.Annotations;
 
+	/// <summary>
+	///     Extension methods for the <see cref="Nullable{T}" /> type.
+	/// </summary>
 	[PublicAPI]
-	public static partial class NullableExtensions
+	public static class NullableExtensions
 	{
 		/// <summary>
 		///     Checks if the given nullable has no value.

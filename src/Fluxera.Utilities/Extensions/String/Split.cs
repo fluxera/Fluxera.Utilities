@@ -5,11 +5,14 @@ namespace Fluxera.Utilities.Extensions
 	using System;
 	using JetBrains.Annotations;
 
+	/// <summary>
+	///     Extension methods for the <see cref="string" /> type.
+	/// </summary>
 	[PublicAPI]
 	public static partial class StringExtensions
 	{
 		/// <summary>
-		///     Uses <see cref="string.Split(string[], StringSplitOptions)"/> method to split given string by given separator.
+		///     Uses <see cref="string.Split(string[], StringSplitOptions)" /> method to split given string by given separator.
 		/// </summary>
 		public static string[] Split(this string str, string separator)
 		{
@@ -17,7 +20,7 @@ namespace Fluxera.Utilities.Extensions
 		}
 
 		/// <summary>
-		///     Uses <see cref="string.Split(string[], StringSplitOptions)"/> method to split given string by given separator.
+		///     Uses <see cref="string.Split(string[], StringSplitOptions)" /> method to split given string by given separator.
 		/// </summary>
 		public static string[] Split(this string str, string separator, StringSplitOptions options)
 		{

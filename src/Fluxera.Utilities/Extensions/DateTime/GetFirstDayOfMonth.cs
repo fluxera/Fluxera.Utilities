@@ -4,6 +4,9 @@ namespace Fluxera.Utilities.Extensions
 {
 	using System;
 
+	/// <summary>
+	///     Extension methods for the <see cref="DateTime" /> type.
+	/// </summary>
 	public static partial class DateTimeExtensions
 	{
 		/// <summary>
@@ -25,7 +28,7 @@ namespace Fluxera.Utilities.Extensions
 		public static DateTime GetFirstDayOfMonth(this DateTime date, DayOfWeek dayOfWeek)
 		{
 			DateTime dt = date.GetFirstDayOfMonth();
-			while (dt.DayOfWeek != dayOfWeek)
+			while(dt.DayOfWeek != dayOfWeek)
 			{
 				dt = dt.AddDays(1);
 			}

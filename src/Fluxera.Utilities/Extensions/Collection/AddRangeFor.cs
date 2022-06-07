@@ -4,8 +4,11 @@ namespace Fluxera.Utilities.Extensions
 {
 	using System;
 	using System.Collections.Generic;
-	using Guards;
+	using Fluxera.Guards;
 
+	/// <summary>
+	///     Extension methods for the <see cref="ICollection{T}" /> type.
+	/// </summary>
 	public static partial class CollectionExtensions
 	{
 		/// <summary>
@@ -17,10 +20,10 @@ namespace Fluxera.Utilities.Extensions
 		/// <param name="predicate">The predicate to match.</param>
 		public static void AddRangeFor<T>(this ICollection<T> target, IEnumerable<T> values, Predicate<T> predicate)
 		{
-			Guard.Against.Null(target, nameof(target));
-			Guard.Against.Null(values, nameof(values));
+			target = Guard.Against.Null(target);
+			values = Guard.Against.Null(values);
 
-			foreach (T value in values)
+			foreach(T value in values)
 			{
 				target.AddFor(value, predicate);
 			}

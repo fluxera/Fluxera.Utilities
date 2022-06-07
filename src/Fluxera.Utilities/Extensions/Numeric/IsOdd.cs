@@ -2,6 +2,9 @@
 
 namespace Fluxera.Utilities.Extensions
 {
+	/// <summary>
+	///     Extension methods for numeric types.
+	/// </summary>
 	public static partial class NumericExtensions
 	{
 		/// <summary>

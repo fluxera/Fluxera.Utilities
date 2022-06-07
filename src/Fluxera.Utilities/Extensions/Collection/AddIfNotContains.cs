@@ -5,9 +5,12 @@ namespace Fluxera.Utilities.Extensions
 	using System;
 	using System.Collections.Generic;
 	using System.Linq;
-	using Guards;
+	using Fluxera.Guards;
 	using JetBrains.Annotations;
 
+	/// <summary>
+	///     Extension methods for the <see cref="ICollection{T}" /> type.
+	/// </summary>
 	[PublicAPI]
 	public static partial class CollectionExtensions
 	{
@@ -22,7 +25,7 @@ namespace Fluxera.Utilities.Extensions
 		{
 			Guard.Against.Null(collection, nameof(collection));
 
-			if (collection.Contains(item))
+			if(collection.Contains(item))
 			{
 				return false;
 			}
@@ -44,9 +47,9 @@ namespace Fluxera.Utilities.Extensions
 
 			IList<T> addedItems = new List<T>();
 
-			foreach (T item in items)
+			foreach(T item in items)
 			{
-				if (collection.Contains(item))
+				if(collection.Contains(item))
 				{
 					continue;
 				}
@@ -74,7 +77,7 @@ namespace Fluxera.Utilities.Extensions
 			Guard.Against.Null(predicate, nameof(predicate));
 			Guard.Against.Null(itemFactory, nameof(itemFactory));
 
-			if (collection.Any(predicate))
+			if(collection.Any(predicate))
 			{
 				return false;
 			}
@@ -84,7 +87,8 @@ namespace Fluxera.Utilities.Extensions
 		}
 
 		/// <summary>
-		/// Adds an item to the collection if it's not already in the collection based on the given <paramref name="predicate"/>.
+		///     Adds an item to the collection if it's not already in the collection based on the given
+		///     <paramref name="predicate" />.
 		/// </summary>
 		/// <param name="collection">The collection</param>
 		/// <param name="predicate">The condition to decide if the item is already in the collection</param>
@@ -97,7 +101,7 @@ namespace Fluxera.Utilities.Extensions
 			Guard.Against.Null(predicate, nameof(predicate));
 			Guard.Against.Null(itemFactory, nameof(itemFactory));
 
-			if (collection.Any(x => predicate(x)))
+			if(collection.Any(x => predicate(x)))
 			{
 				return false;
 			}

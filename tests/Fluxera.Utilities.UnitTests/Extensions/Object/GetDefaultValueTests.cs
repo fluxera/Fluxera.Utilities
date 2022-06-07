@@ -1,8 +1,8 @@
 ﻿namespace Fluxera.Utilities.UnitTests.Extensions.Object
 {
 	using FluentAssertions;
+	using Fluxera.Utilities.Extensions;
 	using NUnit.Framework;
-	using Utilities.Extensions;
 
 	[TestFixture]
 	public class GetDefaultValueTests
@@ -27,7 +27,7 @@
 			object obj = new object();
 
 			// Act
-			object? result = obj.GetDefaultValue();
+			object result = obj.GetDefaultValue();
 
 			// Assert
 			result.Should().BeNull();

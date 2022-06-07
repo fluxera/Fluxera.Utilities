@@ -4,6 +4,9 @@ namespace Fluxera.Utilities.Extensions
 {
 	using System;
 
+	/// <summary>
+	///     Extension methods for the <see cref="string" /> type.
+	/// </summary>
 	public static partial class StringExtensions
 	{
 		/// <summary>
@@ -12,7 +15,7 @@ namespace Fluxera.Utilities.Extensions
 		/// <param name="str">The string.</param>
 		/// <param name="postFixes">one or more postfix.</param>
 		/// <returns>Modified string or the same string if it has not any of given postfixes</returns>
-		public static string? RemovePostFix(this string str, params string[] postFixes)
+		public static string RemovePostFix(this string str, params string[] postFixes)
 		{
 			return str.RemovePostFix(StringComparison.Ordinal, postFixes);
 		}
@@ -24,7 +27,7 @@ namespace Fluxera.Utilities.Extensions
 		/// <param name="comparisonType">String comparison type</param>
 		/// <param name="postFixes">one or more postfix.</param>
 		/// <returns>Modified string or the same string if it has not any of given postfixes</returns>
-		public static string? RemovePostFix(this string str, StringComparison comparisonType, params string[] postFixes)
+		public static string RemovePostFix(this string str, StringComparison comparisonType, params string[] postFixes)
 		{
 			if(str.IsNullOrEmpty())
 			{

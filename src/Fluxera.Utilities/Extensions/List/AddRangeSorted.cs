@@ -4,8 +4,11 @@ namespace Fluxera.Utilities.Extensions
 {
 	using System.Collections.Generic;
 	using System.Linq;
-	using Guards;
+	using Fluxera.Guards;
 
+	/// <summary>
+	///     Extension methods for the <see cref="List{T}" /> type.
+	/// </summary>
 	public static partial class ListExtensions
 	{
 		/// <summary>
@@ -21,7 +24,7 @@ namespace Fluxera.Utilities.Extensions
 
 			items ??= Enumerable.Empty<T>();
 
-			foreach (T item in items)
+			foreach(T item in items)
 			{
 				target.AddSorted(item, comparer);
 			}

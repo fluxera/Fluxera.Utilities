@@ -3,8 +3,11 @@
 namespace Fluxera.Utilities.Extensions
 {
 	using System.Collections.Generic;
-	using Guards;
+	using Fluxera.Guards;
 
+	/// <summary>
+	///     Extension methods for the <see cref="ICollection{T}" /> type.
+	/// </summary>
 	public static partial class CollectionExtensions
 	{
 		/// <summary>
@@ -15,10 +18,10 @@ namespace Fluxera.Utilities.Extensions
 		/// <param name="values">The elements to add.</param>
 		public static void AddRange<T>(this ICollection<T> target, IEnumerable<T> values)
 		{
-			Guard.Against.Null(target, nameof(target));
-			Guard.Against.Null(values, nameof(values));
+			target = Guard.Against.Null(target);
+			values = Guard.Against.Null(values);
 
-			foreach (T value in values)
+			foreach(T value in values)
 			{
 				target.Add(value);
 			}

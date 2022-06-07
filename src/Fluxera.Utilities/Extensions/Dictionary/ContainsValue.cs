@@ -5,9 +5,12 @@ namespace Fluxera.Utilities.Extensions
 	using System;
 	using System.Collections.Generic;
 	using System.Linq;
-	using Guards;
+	using Fluxera.Guards;
 	using JetBrains.Annotations;
 
+	/// <summary>
+	///     Extension methods for the <see cref="IDictionary{TKey,TValue}" /> type.
+	/// </summary>
 	[PublicAPI]
 	public static partial class DictionaryExtensions
 	{
@@ -26,6 +29,5 @@ namespace Fluxera.Utilities.Extensions
 
 			return dictionary.Values.Any(x => x.Equals(value));
 		}
-
 	}
 }

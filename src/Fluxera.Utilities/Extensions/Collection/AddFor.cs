@@ -4,8 +4,11 @@ namespace Fluxera.Utilities.Extensions
 {
 	using System;
 	using System.Collections.Generic;
-	using Guards;
+	using Fluxera.Guards;
 
+	/// <summary>
+	///     Extension methods for the <see cref="ICollection{T}" /> type.
+	/// </summary>
 	public static partial class CollectionExtensions
 	{
 		/// <summary>
@@ -19,7 +22,7 @@ namespace Fluxera.Utilities.Extensions
 		{
 			Guard.Against.Null(target, nameof(target));
 
-			if (predicate(value))
+			if(predicate(value))
 			{
 				target.Add(value);
 			}

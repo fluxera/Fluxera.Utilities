@@ -2,6 +2,9 @@
 
 namespace Fluxera.Utilities.Extensions
 {
+	/// <summary>
+	///     Extension methods for the <see cref="object" /> type.
+	/// </summary>
 	public static partial class ObjectExtensions
 	{
 		/// <summary>
@@ -11,7 +14,7 @@ namespace Fluxera.Utilities.Extensions
 		/// <typeparam name="T">The Type of the value.</typeparam>
 		/// <param name="value">The value.</param>
 		/// <returns>The default value.</returns>
-		public static T? GetDefaultValue<T>(this T value)
+		public static T GetDefaultValue<T>(this T value)
 		{
 			return default;
 		}

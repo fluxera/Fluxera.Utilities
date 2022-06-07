@@ -1,4 +1,5 @@
 ﻿// ReSharper disable once CheckNamespace
+
 namespace Fluxera.Utilities
 {
 	using System;
@@ -7,7 +8,7 @@ namespace Fluxera.Utilities
 	using System.Security.Principal;
 	using System.Threading;
 	using System.Threading.Tasks;
-	using Guards;
+	using Fluxera.Guards;
 	using JetBrains.Annotations;
 
 	/// <summary>
@@ -77,13 +78,13 @@ namespace Fluxera.Utilities
 		///     Checks if given method is an async method.
 		/// </summary>
 		/// <param name="method">A method to check</param>
-		public static bool IsAsync(this MethodInfo? method)
+		public static bool IsAsync(this MethodInfo method)
 		{
 			Guard.Against.Null(method, nameof(method));
 
-			Type type = method!.ReturnType;
-			return (type == typeof(Task)) ||
-				(type.GetTypeInfo().IsGenericType && (type.GetGenericTypeDefinition() == typeof(Task<>)));
+			Type type = method.ReturnType;
+			return type == typeof(Task) ||
+				type.GetTypeInfo().IsGenericType && type.GetGenericTypeDefinition() == typeof(Task<>);
 		}
 	}
 }

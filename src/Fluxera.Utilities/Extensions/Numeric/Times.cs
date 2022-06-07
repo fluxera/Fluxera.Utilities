@@ -3,9 +3,12 @@
 namespace Fluxera.Utilities.Extensions
 {
 	using System;
-	using Guards;
+	using Fluxera.Guards;
 	using JetBrains.Annotations;
 
+	/// <summary>
+	///     Extension methods for numeric types.
+	/// </summary>
 	[PublicAPI]
 	public static partial class NumericExtensions
 	{
@@ -99,7 +102,7 @@ namespace Fluxera.Utilities.Extensions
 			Times<int>(value, action);
 		}
 
-		
+
 		/// <summary>
 		///     Performs the specified action n times based on the underlying value.
 		/// </summary>

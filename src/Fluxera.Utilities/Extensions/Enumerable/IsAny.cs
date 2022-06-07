@@ -6,6 +6,9 @@ namespace Fluxera.Utilities.Extensions
 	using System.Linq;
 	using JetBrains.Annotations;
 
+	/// <summary>
+	///     Extension methods for the <see cref="IEnumerable{T}" /> type.
+	/// </summary>
 	public static partial class EnumerableExtensions
 	{
 		/// <summary>
@@ -15,9 +18,9 @@ namespace Fluxera.Utilities.Extensions
 		/// <param name="enumerable">An IEnumerable<typeparamref name="T" /></param>
 		/// <returns>True if enumerable have at least one value otherwise false.</returns>
 		[ContractAnnotation("notnull => true")]
-		public static bool IsAny<T>(this IEnumerable<T>? enumerable)
+		public static bool IsAny<T>(this IEnumerable<T> enumerable)
 		{
-			return (enumerable is not null) && enumerable.Any();
+			return enumerable is not null && enumerable.Any();
 		}
 
 		/// <summary>
@@ -27,7 +30,7 @@ namespace Fluxera.Utilities.Extensions
 		/// <param name="enumerable">An IEnumerable<typeparamref name="T" /></param>
 		/// <returns>True if enumerable have at least one value otherwise false.</returns>
 		[ContractAnnotation("null => true")]
-		public static bool IsNotAny<T>(this IEnumerable<T>? enumerable)
+		public static bool IsNotAny<T>(this IEnumerable<T> enumerable)
 		{
 			return !enumerable.IsAny();
 		}

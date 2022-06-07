@@ -1,10 +1,11 @@
 ﻿// ReSharper disable once CheckNamespace
+
 namespace Fluxera.Utilities
 {
 	using System;
 	using System.Collections.Generic;
 	using System.Linq;
-	using Guards;
+	using Fluxera.Guards;
 	using JetBrains.Annotations;
 
 	/// <summary>
@@ -75,7 +76,7 @@ namespace Fluxera.Utilities
 		/// <param name="items">List of object to select a random one</param>
 		public static T GetRandomOf<T>(params T[] items)
 		{
-			Guard.Against.NullOrEmpty(items, nameof(items));
+			items = Guard.Against.Null(items);
 
 			return items[GetRandom(0, items.Length)];
 		}
@@ -87,7 +88,7 @@ namespace Fluxera.Utilities
 		/// <param name="items">List of object to select a random one</param>
 		public static T GetRandomOfList<T>(IList<T> items)
 		{
-			Guard.Against.NullOrEmpty(items, nameof(items));
+			items = Guard.Against.Null(items);
 
 			return items[GetRandom(0, items.Count)];
 		}
@@ -99,7 +100,7 @@ namespace Fluxera.Utilities
 		/// <param name="items">items</param>
 		public static IList<T> GenerateRandomizedList<T>(IEnumerable<T> items)
 		{
-			Guard.Against.Null(items, nameof(items));
+			items = Guard.Against.Null(items);
 
 			IList<T> currentList = new List<T>(items);
 			IList<T> randomList = new List<T>();

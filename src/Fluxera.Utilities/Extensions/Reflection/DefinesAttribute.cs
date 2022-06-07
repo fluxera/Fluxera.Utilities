@@ -6,6 +6,9 @@ namespace Fluxera.Utilities.Extensions
 	using System.Reflection;
 	using JetBrains.Annotations;
 
+	/// <summary>
+	///     Extension methods for the <see cref="MemberInfo" /> type.
+	/// </summary>
 	[PublicAPI]
 	public static partial class ReflectionExtensions
 	{

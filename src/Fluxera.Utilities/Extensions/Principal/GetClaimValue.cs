@@ -3,9 +3,12 @@
 namespace Fluxera.Utilities.Extensions
 {
 	using System.Security.Claims;
-	using Guards;
+	using Fluxera.Guards;
 	using JetBrains.Annotations;
 
+	/// <summary>
+	///     Extension methods for the <see cref="ClaimsPrincipal" /> type.
+	/// </summary>
 	[PublicAPI]
 	public static partial class PrincipalExtensions
 	{
@@ -15,7 +18,7 @@ namespace Fluxera.Utilities.Extensions
 		/// <param name="principal">The principal instance.</param>
 		/// <param name="claim">The claim type to get.</param>
 		/// <returns>The values of the claim or null.</returns>
-		public static string? GetClaimValue(this ClaimsPrincipal principal, string claim)
+		public static string GetClaimValue(this ClaimsPrincipal principal, string claim)
 		{
 			Guard.Against.Null(principal, nameof(principal));
 			Guard.Against.NullOrWhiteSpace(claim, nameof(claim));

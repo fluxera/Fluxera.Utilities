@@ -5,11 +5,14 @@ namespace Fluxera.Utilities.Extensions
 	using System.IO;
 	using System.Reflection;
 	using System.Threading.Tasks;
-	using Guards;
+	using Fluxera.Guards;
 	using JetBrains.Annotations;
 
+	/// <summary>
+	///     Extension methods for the <see cref="Assembly" /> type.
+	/// </summary>
 	[PublicAPI]
-	public static partial class AssemblyExtensions
+	public static class AssemblyExtensions
 	{
 		/// <summary>
 		///     Gets the content of the given embedded resource location as string.
@@ -23,11 +26,11 @@ namespace Fluxera.Utilities.Extensions
 
 			string result = string.Empty;
 
-			await using (Stream? stream = assembly.GetManifestResourceStream(resourceLocation))
+			await using(Stream stream = assembly.GetManifestResourceStream(resourceLocation))
 			{
-				if (stream != null && stream.CanRead)
+				if(stream != null && stream.CanRead)
 				{
-					using (StreamReader reader = new StreamReader(stream))
+					using(StreamReader reader = new StreamReader(stream))
 					{
 						result = await reader.ReadToEndAsync();
 					}

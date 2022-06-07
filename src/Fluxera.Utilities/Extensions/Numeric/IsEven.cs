@@ -2,6 +2,9 @@
 
 namespace Fluxera.Utilities.Extensions
 {
+	/// <summary>
+	///     Extension methods for numeric types.
+	/// </summary>
 	public static partial class NumericExtensions
 	{
 		/// <summary>
@@ -11,7 +14,7 @@ namespace Fluxera.Utilities.Extensions
 		/// <returns>True, if the value is even.</returns>
 		public static bool IsEven(this byte value)
 		{
-			return (value % 2) == 0;
+			return value % 2 == 0;
 		}
 
 		/// <summary>
@@ -21,7 +24,7 @@ namespace Fluxera.Utilities.Extensions
 		/// <returns>True, if the value is even.</returns>
 		public static bool IsEven(this short value)
 		{
-			return (value % 2) == 0;
+			return value % 2 == 0;
 		}
 
 		/// <summary>
@@ -31,7 +34,7 @@ namespace Fluxera.Utilities.Extensions
 		/// <returns>True, if the value is even.</returns>
 		public static bool IsEven(this int value)
 		{
-			return (value % 2) == 0;
+			return value % 2 == 0;
 		}
 
 		/// <summary>
@@ -41,7 +44,7 @@ namespace Fluxera.Utilities.Extensions
 		/// <returns>True, if the value is even.</returns>
 		public static bool IsEven(this long value)
 		{
-			return (value % 2) == 0;
+			return value % 2 == 0;
 		}
 	}
 }

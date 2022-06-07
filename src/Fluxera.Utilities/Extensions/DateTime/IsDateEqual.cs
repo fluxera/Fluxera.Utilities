@@ -4,10 +4,13 @@ namespace Fluxera.Utilities.Extensions
 {
 	using System;
 
+	/// <summary>
+	///     Extension methods for the <see cref="DateTime" /> type.
+	/// </summary>
 	public static partial class DateTimeExtensions
 	{
 		/// <summary>
-		///     Determines if the date part of two <see cref="DateTime"/> values are equal.
+		///     Determines if the date part of two <see cref="DateTime" /> values are equal.
 		/// </summary>
 		/// <param name="date">The date.</param>
 		/// <param name="dateToCompare">The date to compare with.</param>

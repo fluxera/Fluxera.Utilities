@@ -3,9 +3,10 @@
 namespace Fluxera.Utilities.Extensions
 {
 	using System;
-	using System.Linq;
-	using Guards;
 
+	/// <summary>
+	///     Extension methods for the <see cref="string" /> type.
+	/// </summary>
 	public static partial class StringExtensions
 	{
 		/// <summary>
@@ -14,7 +15,7 @@ namespace Fluxera.Utilities.Extensions
 		/// <param name="str">The string.</param>
 		/// <param name="preFixes">one or more prefix.</param>
 		/// <returns>Modified string or the same string if it has not any of given prefixes</returns>
-		public static string? RemovePreFix(this string str, params string[] preFixes)
+		public static string RemovePreFix(this string str, params string[] preFixes)
 		{
 			return str.RemovePreFix(StringComparison.Ordinal, preFixes);
 		}
@@ -26,7 +27,7 @@ namespace Fluxera.Utilities.Extensions
 		/// <param name="comparisonType">String comparison type</param>
 		/// <param name="preFixes">one or more prefix.</param>
 		/// <returns>Modified string or the same string if it has not any of given prefixes</returns>
-		public static string? RemovePreFix(this string str, StringComparison comparisonType, params string[] preFixes)
+		public static string RemovePreFix(this string str, StringComparison comparisonType, params string[] preFixes)
 		{
 			if(str.IsNullOrEmpty())
 			{

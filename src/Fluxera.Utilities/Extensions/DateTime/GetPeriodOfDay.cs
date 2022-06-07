@@ -4,10 +4,14 @@ namespace Fluxera.Utilities.Extensions
 {
 	using System;
 
+	/// <summary>
+	///     Extension methods for the <see cref="DateTime" /> type.
+	/// </summary>
 	public static partial class DateTimeExtensions
 	{
 		/// <summary>
-		///     Returns the period of the day <see cref="PeriodOfDay.Morning"/>, <see cref="PeriodOfDay.Afternoon"/>, <see cref="PeriodOfDay.Evening"/>.
+		///     Returns the period of the day <see cref="PeriodOfDay.Morning" />, <see cref="PeriodOfDay.Afternoon" />,
+		///     <see cref="PeriodOfDay.Evening" />.
 		/// </summary>
 		/// <param name="date">The date.</param>
 		/// <returns>The period "morning", "afternoon", or "evening".</returns>

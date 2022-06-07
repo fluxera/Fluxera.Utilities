@@ -1,4 +1,6 @@
 ﻿// ReSharper disable once CheckNamespace
+// ReSharper disable StaticMemberInGenericType
+
 namespace Fluxera.Utilities.Extensions
 {
 	using System;

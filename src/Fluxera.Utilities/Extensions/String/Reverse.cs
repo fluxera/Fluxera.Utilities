@@ -4,11 +4,14 @@ namespace Fluxera.Utilities.Extensions
 {
 	using System;
 
+	/// <summary>
+	///     Extension methods for the <see cref="string" /> type.
+	/// </summary>
 	public static partial class StringExtensions
 	{
 		/// <summary>
-		///     Reverses the given string. <br/>
-		///		If the string is <c>null</c>, <see cref="string.Empty"/> or has a length of 1 the input value is returned.
+		///     Reverses the given string. <br />
+		///     If the string is <c>null</c>, <see cref="string.Empty" /> or has a length of 1 the input value is returned.
 		/// </summary>
 		/// <param name="str">The string to reverse.</param>
 		/// <returns>The reversed string.</returns>

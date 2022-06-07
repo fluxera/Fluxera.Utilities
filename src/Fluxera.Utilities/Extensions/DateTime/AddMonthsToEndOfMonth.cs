@@ -4,6 +4,9 @@ namespace Fluxera.Utilities.Extensions
 {
 	using System;
 
+	/// <summary>
+	///     Extension methods for the <see cref="DateTime" /> type.
+	/// </summary>
 	public static partial class DateTimeExtensions
 	{
 		/// <summary>
@@ -16,7 +19,7 @@ namespace Fluxera.Utilities.Extensions
 		{
 			DateTime nextMonth = date.AddMonths(numberOfMonths);
 
-			if (date.Day != DateTime.DaysInMonth(date.Year, date.Month)) // Is last day in month.
+			if(date.Day != DateTime.DaysInMonth(date.Year, date.Month)) // Is last day in month.
 			{
 				// Any other day then last day.
 				return nextMonth;
