@@ -5,9 +5,12 @@ namespace Fluxera.Utilities.Extensions
 	using System.Collections.Generic;
 	using System.Collections.ObjectModel;
 	using System.Linq;
-	using Guards;
+	using Fluxera.Guards;
 	using JetBrains.Annotations;
 
+	/// <summary>
+	///     Extension methods for the <see cref="IEnumerable{T}" /> type.
+	/// </summary>
 	[PublicAPI]
 	public static partial class EnumerableExtensions
 	{
@@ -19,7 +22,7 @@ namespace Fluxera.Utilities.Extensions
 		/// <returns>A write-protected collection.</returns>
 		public static IReadOnlyCollection<T> AsReadOnly<T>(this IEnumerable<T> enumerable)
 		{
-			Guard.Against.Null(enumerable, nameof(enumerable));
+			enumerable = Guard.Against.Null(enumerable);
 
 			return new ReadOnlyCollection<T>(enumerable.ToList());
 		}

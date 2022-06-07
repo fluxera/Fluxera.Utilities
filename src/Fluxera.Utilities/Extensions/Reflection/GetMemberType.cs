@@ -4,8 +4,11 @@ namespace Fluxera.Utilities.Extensions
 {
 	using System;
 	using System.Reflection;
-	using Guards;
+	using Fluxera.Guards;
 
+	/// <summary>
+	///     Extension methods for the <see cref="MemberInfo" /> type.
+	/// </summary>
 	public static partial class ReflectionExtensions
 	{
 		/// <summary>

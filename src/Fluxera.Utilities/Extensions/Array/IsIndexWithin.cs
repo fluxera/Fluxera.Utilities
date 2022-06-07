@@ -3,9 +3,12 @@
 namespace Fluxera.Utilities.Extensions
 {
 	using System;
-	using Guards;
+	using Fluxera.Guards;
 	using JetBrains.Annotations;
 
+	/// <summary>
+	///     Extension methods for the <see cref="Array" /> type.
+	/// </summary>
 	[PublicAPI]
 	public static partial class ArrayExtensions
 	{

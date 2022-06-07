@@ -5,6 +5,9 @@ namespace Fluxera.Utilities.Extensions
 	using System;
 	using JetBrains.Annotations;
 
+	/// <summary>
+	///     Extension methods for the <see cref="Enum" /> type.
+	/// </summary>
 	[PublicAPI]
 	public static partial class EnumExtensions
 	{

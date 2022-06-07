@@ -4,6 +4,9 @@ namespace Fluxera.Utilities.Extensions
 {
 	using JetBrains.Annotations;
 
+	/// <summary>
+	///     Extension methods for the <see cref="object" /> type.
+	/// </summary>
 	[PublicAPI]
 	public static partial class ObjectExtensions
 	{
@@ -13,7 +16,7 @@ namespace Fluxera.Utilities.Extensions
 		/// </summary>
 		/// <param name="target">Target reference. Can be null.</param>
 		[ContractAnnotation("null => true")]
-		public static bool IsNull(this object? target)
+		public static bool IsNull(this object target)
 		{
 			bool result = target.IsNull<object>();
 			return result;
@@ -26,7 +29,7 @@ namespace Fluxera.Utilities.Extensions
 		/// <typeparam name="T">Type of target.</typeparam>
 		/// <param name="target">Target reference. Can be null.</param>
 		[ContractAnnotation("null => true")]
-		public static bool IsNull<T>([NoEnumeration] this T? target) where T : class
+		public static bool IsNull<T>([NoEnumeration] this T target) where T : class
 		{
 			bool result = ReferenceEquals(target, null);
 			return result;
@@ -38,7 +41,7 @@ namespace Fluxera.Utilities.Extensions
 		/// </summary>
 		/// <param name="target">Target reference. Can be null.</param>
 		[ContractAnnotation("notnull => true")]
-		public static bool IsNotNull(this object? target)
+		public static bool IsNotNull(this object target)
 		{
 			bool result = target.IsNotNull<object>();
 			return result;
@@ -51,7 +54,7 @@ namespace Fluxera.Utilities.Extensions
 		/// <typeparam name="T">Type of target.</typeparam>
 		/// <param name="target">Target reference. Can be null.</param>
 		[ContractAnnotation("notnull => true")]
-		public static bool IsNotNull<T>([NoEnumeration] this T? target) where T : class
+		public static bool IsNotNull<T>([NoEnumeration] this T target) where T : class
 		{
 			bool result = !target.IsNull();
 			return result;

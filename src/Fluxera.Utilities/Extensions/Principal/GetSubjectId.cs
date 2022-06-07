@@ -6,8 +6,11 @@ namespace Fluxera.Utilities.Extensions
 	using System.Diagnostics;
 	using System.Security.Claims;
 	using System.Security.Principal;
-	using Guards;
+	using Fluxera.Guards;
 
+	/// <summary>
+	///     Extension methods for the <see cref="ClaimsPrincipal" /> type.
+	/// </summary>
 	public static partial class PrincipalExtensions
 	{
 		/// <summary>
@@ -34,8 +37,8 @@ namespace Fluxera.Utilities.Extensions
 		{
 			Guard.Against.Null(identity, nameof(identity));
 
-			ClaimsIdentity? claimsIdentity = identity as ClaimsIdentity;
-			Claim? claim = claimsIdentity?.FindFirst("sub");
+			ClaimsIdentity claimsIdentity = identity as ClaimsIdentity;
+			Claim claim = claimsIdentity?.FindFirst("sub");
 
 			return claim?.Value ?? string.Empty;
 		}

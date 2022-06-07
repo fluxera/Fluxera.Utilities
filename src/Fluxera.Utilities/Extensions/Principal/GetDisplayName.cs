@@ -4,8 +4,11 @@ namespace Fluxera.Utilities.Extensions
 {
 	using System.Diagnostics;
 	using System.Security.Claims;
-	using Guards;
+	using Fluxera.Guards;
 
+	/// <summary>
+	///     Extension methods for the <see cref="ClaimsPrincipal" /> type.
+	/// </summary>
 	public static partial class PrincipalExtensions
 	{
 		/// <summary>

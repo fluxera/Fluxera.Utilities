@@ -4,6 +4,9 @@ namespace Fluxera.Utilities.Extensions
 {
 	using JetBrains.Annotations;
 
+	/// <summary>
+	///     Extension methods for struct types.
+	/// </summary>
 	[PublicAPI]
 	public static partial class ValueTypeExtensions
 	{

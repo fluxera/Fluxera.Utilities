@@ -3,8 +3,8 @@
 	using System.Collections.Generic;
 	using System.Security.Claims;
 	using FluentAssertions;
+	using Fluxera.Utilities.Extensions;
 	using NUnit.Framework;
-	using Utilities.Extensions;
 
 	[TestFixture]
 	public class GetClaimValueTests
@@ -20,7 +20,7 @@
 			ClaimsPrincipal principal = new ClaimsPrincipal(identity);
 
 			// Act
-			string? result = principal.GetClaimValue("test-claim");
+			string result = principal.GetClaimValue("test-claim");
 
 			// Assert
 			result.Should().NotBeNullOrWhiteSpace();
@@ -38,7 +38,7 @@
 			ClaimsPrincipal principal = new ClaimsPrincipal(identity);
 
 			// Act
-			string? result = principal.GetClaimValue("test-klaim");
+			string result = principal.GetClaimValue("test-klaim");
 
 			// Assert
 			result.Should().BeNull();

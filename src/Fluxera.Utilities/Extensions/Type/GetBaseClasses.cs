@@ -20,14 +20,14 @@ namespace Fluxera.Utilities.Extensions
 			return types.ToArray();
 		}
 
-		private static void AddTypeAndBaseTypesRecursive(IList<Type> types, Type? type, bool includeObject)
+		private static void AddTypeAndBaseTypesRecursive(IList<Type> types, Type type, bool includeObject)
 		{
-			if (type == null)
+			if(type == null)
 			{
 				return;
 			}
 
-			if (!includeObject && type == typeof(object))
+			if(!includeObject && type == typeof(object))
 			{
 				return;
 			}

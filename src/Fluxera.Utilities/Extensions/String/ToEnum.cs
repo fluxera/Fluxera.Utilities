@@ -3,13 +3,16 @@
 namespace Fluxera.Utilities.Extensions
 {
 	using System;
-	using Guards;
+	using Fluxera.Guards;
 
+	/// <summary>
+	///     Extension methods for the <see cref="string" /> type.
+	/// </summary>
 	public static partial class StringExtensions
 	{
 		/// <summary>
 		///     Converts the string to a matching enum value of a given enum type.
-		///		The case of the string is ignored.
+		///     The case of the string is ignored.
 		/// </summary>
 		/// <typeparam name="TEnum">The type of the target enum.</typeparam>
 		/// <param name="value">The string to convert.</param>

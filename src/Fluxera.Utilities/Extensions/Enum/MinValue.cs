@@ -4,6 +4,9 @@ namespace Fluxera.Utilities.Extensions
 {
 	using System;
 
+	/// <summary>
+	///     Extension methods for the <see cref="Enum" /> type.
+	/// </summary>
 	public static partial class EnumExtensions
 	{
 		/// <summary>

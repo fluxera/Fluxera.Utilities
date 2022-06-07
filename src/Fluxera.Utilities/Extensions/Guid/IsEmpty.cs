@@ -5,8 +5,11 @@ namespace Fluxera.Utilities.Extensions
 	using System;
 	using JetBrains.Annotations;
 
+	/// <summary>
+	///     Extension methods for the <see cref="Guid" /> type.
+	/// </summary>
 	[PublicAPI]
-	public static partial class GuidExtensions
+	public static class GuidExtensions
 	{
 		/// <summary>
 		///     Checks if the given <see cref="Guid" /> is <see cref="Guid.Empty" />.

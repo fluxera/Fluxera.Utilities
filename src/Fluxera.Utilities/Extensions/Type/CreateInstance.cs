@@ -18,7 +18,7 @@ namespace Fluxera.Utilities.Extensions
 		/// <param name="type">The type to be instantiated.</param>
 		/// <param name="constructorParameters">Optional constructor parameters.</param>
 		/// <returns>The instantiated object.</returns>
-		public static object? CreateInstance(this Type type, params object[] constructorParameters)
+		public static object CreateInstance(this Type type, params object[] constructorParameters)
 		{
 			Guard.Against.Null(type, nameof(type));
 
@@ -35,7 +35,7 @@ namespace Fluxera.Utilities.Extensions
 		/// <param name="type">The type to be instantiated.</param>
 		/// <param name="constructorParameters">Optional constructor parameters.</param>
 		/// <returns>The instantiated object.</returns>
-		public static T? CreateInstance<T>(this Type type, params object[] constructorParameters) where T : class
+		public static T CreateInstance<T>(this Type type, params object[] constructorParameters) where T : class
 		{
 			object instance = Activator.CreateInstance(type, constructorParameters);
 			return instance as T;

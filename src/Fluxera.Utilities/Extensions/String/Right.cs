@@ -3,8 +3,11 @@
 namespace Fluxera.Utilities.Extensions
 {
 	using System;
-	using Guards;
+	using Fluxera.Guards;
 
+	/// <summary>
+	///     Extension methods for the <see cref="string" /> type.
+	/// </summary>
 	public static partial class StringExtensions
 	{
 		/// <summary>

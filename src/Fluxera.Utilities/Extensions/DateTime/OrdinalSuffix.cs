@@ -4,6 +4,9 @@ namespace Fluxera.Utilities.Extensions
 {
 	using System;
 
+	/// <summary>
+	///     Extension methods for the <see cref="DateTime" /> type.
+	/// </summary>
 	public static partial class DateTimeExtensions
 	{
 		/// <summary>
@@ -15,7 +18,7 @@ namespace Fluxera.Utilities.Extensions
 		{
 			int day = dateTime.Day;
 
-			if (day % 100 >= 11 && day % 100 <= 13)
+			if(day % 100 >= 11 && day % 100 <= 13)
 			{
 				return string.Concat(day, "th");
 			}

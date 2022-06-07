@@ -2,8 +2,12 @@
 
 namespace Fluxera.Utilities.Extensions
 {
+	using System;
 	using System.IO;
 
+	/// <summary>
+	///     Extension methods for the <see cref="Array" /> type.
+	/// </summary>
 	public static partial class ArrayExtensions
 	{
 		/// <summary>

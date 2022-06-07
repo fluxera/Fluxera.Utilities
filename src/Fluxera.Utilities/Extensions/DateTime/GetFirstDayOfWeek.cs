@@ -4,8 +4,11 @@ namespace Fluxera.Utilities.Extensions
 {
 	using System;
 	using System.Globalization;
-	using Guards;
+	using Fluxera.Guards;
 
+	/// <summary>
+	///     Extension methods for the <see cref="DateTime" /> type.
+	/// </summary>
 	public static partial class DateTimeExtensions
 	{
 		/// <summary>
@@ -29,7 +32,7 @@ namespace Fluxera.Utilities.Extensions
 			Guard.Against.Null(cultureInfo, nameof(cultureInfo));
 
 			DayOfWeek firstDayOfWeek = cultureInfo.DateTimeFormat.FirstDayOfWeek;
-			while (date.DayOfWeek != firstDayOfWeek)
+			while(date.DayOfWeek != firstDayOfWeek)
 			{
 				date = date.AddDays(-1);
 			}

@@ -2,11 +2,14 @@
 
 namespace Fluxera.Utilities.Extensions
 {
-	using Guards;
+	using Fluxera.Guards;
 	using JetBrains.Annotations;
 
+	/// <summary>
+	///     Extension methods for the <see cref="char" /> type.
+	/// </summary>
 	[PublicAPI]
-	public static partial class CharExtensions
+	public static class CharExtensions
 	{
 		/// <summary>
 		///     Repeats the given <see cref="char" /> the specified number of times.

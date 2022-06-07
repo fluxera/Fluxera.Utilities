@@ -5,11 +5,14 @@ namespace Fluxera.Utilities.Extensions
 	using System.IO;
 	using System.Text;
 	using System.Threading.Tasks;
-	using Guards;
+	using Fluxera.Guards;
 	using JetBrains.Annotations;
 
+	/// <summary>
+	///     Extension methods for the <see cref="MemoryStream" /> type.
+	/// </summary>
 	[PublicAPI]
-	public static partial class MemoryStreamExtensions
+	public static class MemoryStreamExtensions
 	{
 		/// <summary>
 		///     Converts the content of the stream to a string. <see cref="Encoding.UTF8" /> is used as default encoding.
@@ -32,7 +35,7 @@ namespace Fluxera.Utilities.Extensions
 			Guard.Against.Null(stream, nameof(stream));
 			Guard.Against.Null(encoding, nameof(encoding));
 
-			using (StreamReader reader = new StreamReader(stream, encoding))
+			using(StreamReader reader = new StreamReader(stream, encoding))
 			{
 				return await reader.ReadToEndAsync();
 			}

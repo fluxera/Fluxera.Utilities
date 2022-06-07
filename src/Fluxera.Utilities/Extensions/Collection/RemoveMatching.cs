@@ -5,8 +5,11 @@ namespace Fluxera.Utilities.Extensions
 	using System;
 	using System.Collections.Generic;
 	using System.Linq;
-	using Guards;
+	using Fluxera.Guards;
 
+	/// <summary>
+	///     Extension methods for the <see cref="ICollection{T}" /> type.
+	/// </summary>
 	public static partial class CollectionExtensions
 	{
 		/// <summary>

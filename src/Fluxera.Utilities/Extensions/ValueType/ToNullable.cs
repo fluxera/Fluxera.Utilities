@@ -2,6 +2,9 @@
 
 namespace Fluxera.Utilities.Extensions
 {
+	/// <summary>
+	///     Extension methods for struct types.
+	/// </summary>
 	public static partial class ValueTypeExtensions
 	{
 		/// <summary>

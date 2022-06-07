@@ -5,6 +5,9 @@ namespace Fluxera.Utilities.Extensions
 	using System;
 	using System.Reflection;
 
+	/// <summary>
+	///     Extension methods for the <see cref="MethodInfo" /> type.
+	/// </summary>
 	public static partial class ReflectionExtensions
 	{
 		/// <summary>

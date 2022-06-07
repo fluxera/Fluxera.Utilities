@@ -3,8 +3,11 @@
 namespace Fluxera.Utilities.Extensions
 {
 	using System.IO;
-	using Guards;
+	using Fluxera.Guards;
 
+	/// <summary>
+	///     Extension methods for the <see cref="Stream" /> type.
+	/// </summary>
 	public static partial class StreamExtensions
 	{
 		/// <summary>
