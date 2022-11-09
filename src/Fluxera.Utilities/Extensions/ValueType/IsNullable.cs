@@ -8,7 +8,7 @@ namespace Fluxera.Utilities.Extensions
 	public static partial class ValueTypeExtensions
 	{
 		/// <summary>
-		///     Determines if the specified <see cref="T" /> is a nullable.
+		///     Determines if the specified T is a nullable.
 		/// </summary>
 		/// <returns><c>true</c> if the specified type is nullable; otherwise, <c>false</c>.</returns>
 		/// <param name="t">T.</param>
@@ -19,7 +19,7 @@ namespace Fluxera.Utilities.Extensions
 		}
 
 		/// <summary>
-		///     Determines if the specified <see cref="T" /> is a nullable.
+		///     Determines if the specified T is a nullable.
 		/// </summary>
 		/// <returns><c>true</c> if the specified type is nullable; otherwise, <c>false</c>.</returns>
 		/// <param name="t">T.</param>
