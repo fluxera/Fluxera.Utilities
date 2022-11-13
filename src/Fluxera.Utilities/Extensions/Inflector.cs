@@ -5,10 +5,10 @@
 	using JetBrains.Annotations;
 
 	/// <summary>
-	///		A utility class based on https://github.com/srkirkland/Inflector for manipulating text.
+	///     A utility class based on https://github.com/srkirkland/Inflector for manipulating text.
 	/// </summary>
 	/// <remarks>
-	/// See: https://github.com/srkirkland/Inflector
+	///     See: https://github.com/srkirkland/Inflector
 	/// </remarks>
 	[PublicAPI]
 	internal static class Inflector
@@ -119,11 +119,11 @@
 		{
 			string result = word;
 
-			if (!uncountables.Contains(word.ToLower()))
+			if(!uncountables.Contains(word.ToLower()))
 			{
-				for (int i = rules.Count - 1; i >= 0; i--)
+				for(int i = rules.Count - 1; i >= 0; i--)
 				{
-					if ((result = rules[i].Apply(word)) != null)
+					if((result = rules[i].Apply(word)) != null)
 					{
 						break;
 					}
@@ -196,12 +196,12 @@
 		{
 			ulong nMod100 = number % 100;
 
-			if (nMod100 >= 11 && nMod100 <= 13)
+			if(nMod100 >= 11 && nMod100 <= 13)
 			{
 				return numberString + "th";
 			}
 
-			switch (number % 10)
+			switch(number % 10)
 			{
 				case 1:
 					return numberString + "st";
@@ -232,7 +232,7 @@
 
 			public string Apply(string word)
 			{
-				if (!this.regex.IsMatch(word))
+				if(!this.regex.IsMatch(word))
 				{
 					return null;
 				}

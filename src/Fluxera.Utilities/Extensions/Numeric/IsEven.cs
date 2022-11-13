@@ -2,6 +2,8 @@
 
 namespace Fluxera.Utilities.Extensions
 {
+	using System.Numerics;
+
 	/// <summary>
 	///     Extension methods for numeric types.
 	/// </summary>
@@ -12,39 +14,9 @@ namespace Fluxera.Utilities.Extensions
 		/// </summary>
 		/// <param name="value">The value to check.</param>
 		/// <returns>True, if the value is even.</returns>
-		public static bool IsEven(this byte value)
+		public static bool IsEven<T>(this T value) where T : INumber<T>
 		{
-			return value % 2 == 0;
-		}
-
-		/// <summary>
-		///     Determines whether the value is even.
-		/// </summary>
-		/// <param name="value">The value to check.</param>
-		/// <returns>True, if the value is even.</returns>
-		public static bool IsEven(this short value)
-		{
-			return value % 2 == 0;
-		}
-
-		/// <summary>
-		///     Determines whether the value is even.
-		/// </summary>
-		/// <param name="value">The value to check.</param>
-		/// <returns>True, if the value is even.</returns>
-		public static bool IsEven(this int value)
-		{
-			return value % 2 == 0;
-		}
-
-		/// <summary>
-		///     Determines whether the value is even.
-		/// </summary>
-		/// <param name="value">The value to check.</param>
-		/// <returns>True, if the value is even.</returns>
-		public static bool IsEven(this long value)
-		{
-			return value % 2 == 0;
+			return T.IsEvenInteger(value);
 		}
 	}
 }
