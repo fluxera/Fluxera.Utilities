@@ -6,6 +6,7 @@ namespace Fluxera.Collections.Generic
 	using System.Collections;
 	using System.Collections.Generic;
 	using System.Reflection;
+	using Fluxera.Guards;
 	using JetBrains.Annotations;
 
 	/// <summary>
@@ -137,9 +138,11 @@ namespace Fluxera.Collections.Generic
 
 		private static void CheckType(Type item)
 		{
+			item = Guard.Against.Null(item);
+
 			if(!typeof(TBaseType).GetTypeInfo().IsAssignableFrom(item))
 			{
-				throw new ArgumentException($"The type '{item.Name}' should be assignable to type '{typeof(TBaseType).Name}'.", nameof(item));
+				throw new ArgumentException($"The type '{item?.Name}' should be assignable to type '{typeof(TBaseType).Name}'.", nameof(item));
 			}
 		}
 	}

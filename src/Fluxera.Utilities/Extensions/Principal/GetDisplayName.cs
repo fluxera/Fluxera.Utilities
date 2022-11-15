@@ -19,21 +19,16 @@ namespace Fluxera.Utilities.Extensions
 		[DebuggerStepThrough]
 		public static string GetDisplayName(this ClaimsPrincipal principal)
 		{
-			Guard.Against.Null(principal, nameof(principal));
+			principal = Guard.Against.Null(principal);
 
-			string name = principal.Identity.Name;
+			string name = principal.Identity?.Name;
 			if(!string.IsNullOrWhiteSpace(name))
 			{
 				return name;
 			}
 
 			Claim sub = principal.FindFirst("sub");
-			if(sub != null)
-			{
-				return sub.Value;
-			}
-
-			return string.Empty;
+			return sub is not null ? sub.Value : string.Empty;
 		}
 	}
 }
