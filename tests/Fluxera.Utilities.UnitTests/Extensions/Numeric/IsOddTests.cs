@@ -1,8 +1,10 @@
-﻿namespace Fluxera.Utilities.UnitTests.Extensions.Numeric
+﻿// ReSharper disable RedundantCast
+
+namespace Fluxera.Utilities.UnitTests.Extensions.Numeric
 {
 	using FluentAssertions;
+	using Fluxera.Utilities.Extensions;
 	using NUnit.Framework;
-	using Utilities.Extensions;
 
 	[TestFixture]
 	public class IsOddTests

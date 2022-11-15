@@ -1,4 +1,6 @@
-﻿namespace Fluxera.Utilities.UnitTests.Extensions.Numeric
+﻿// ReSharper disable NotAccessedVariable
+
+namespace Fluxera.Utilities.UnitTests.Extensions.Numeric
 {
 	using System;
 	using FluentAssertions;
