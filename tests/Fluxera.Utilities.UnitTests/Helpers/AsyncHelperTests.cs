@@ -3,6 +3,7 @@
 	using System.Reflection;
 	using System.Threading.Tasks;
 	using FluentAssertions;
+	using JetBrains.Annotations;
 	using NUnit.Framework;
 
 	[TestFixture]
@@ -19,6 +20,7 @@
 			return aNumber;
 		}
 
+		[UsedImplicitly]
 		private int MethodWithReturnValue(int aNumber)
 		{
 			return aNumber;

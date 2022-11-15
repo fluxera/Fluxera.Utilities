@@ -1,10 +1,14 @@
-﻿namespace Fluxera.Utilities.UnitTests.Extensions.Enumerable
+﻿// ReSharper disable ConditionIsAlwaysTrueOrFalse
+
+// ReSharper disable ExpressionIsAlwaysNull
+
+namespace Fluxera.Utilities.UnitTests.Extensions.Enumerable
 {
 	using System.Collections.Generic;
 	using System.Linq;
 	using FluentAssertions;
+	using Fluxera.Utilities.Extensions;
 	using NUnit.Framework;
-	using Utilities.Extensions;
 
 	[TestFixture]
 	public class IsNullOrEmptyTests

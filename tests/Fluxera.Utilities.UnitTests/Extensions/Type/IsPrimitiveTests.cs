@@ -7,6 +7,58 @@
 	using NUnit.Framework;
 
 	[TestFixture]
+	public class IsAssignableToTests
+	{
+		private class First
+		{
+		}
+
+		private class Second : First
+		{
+		}
+
+		[Test]
+		public void ShouldBeAssignableTo()
+		{
+			bool result = typeof(Second).IsAssignableTo<First>();
+			result.Should().BeTrue();
+		}
+
+		[Test]
+		public void ShouldNotBeAssignableTo()
+		{
+			bool result = typeof(First).IsAssignableTo<Second>();
+			result.Should().BeFalse();
+		}
+	}
+
+	[TestFixture]
+	public class IsAssignableFromTests
+	{
+		private class First
+		{
+		}
+
+		private class Second : First
+		{
+		}
+
+		[Test]
+		public void ShouldBeAssignableFrom()
+		{
+			bool result = typeof(First).IsAssignableFrom<Second>();
+			result.Should().BeTrue();
+		}
+
+		[Test]
+		public void ShouldNotBeAssignableFrom()
+		{
+			bool result = typeof(Second).IsAssignableFrom<First>();
+			result.Should().BeFalse();
+		}
+	}
+
+	[TestFixture]
 	public class IsPrimitiveTests
 	{
 		public static IEnumerable<object[]> TestCases()
