@@ -1,4 +1,6 @@
-﻿namespace Fluxera.Utilities.UnitTests.Collections
+﻿// ReSharper disable CollectionNeverQueried.Local
+
+namespace Fluxera.Utilities.UnitTests.Collections
 {
 	using System;
 	using System.Collections.Generic;
