@@ -11,6 +11,8 @@ namespace Fluxera.Utilities.Extensions
 		{
 			typeof(string),
 			typeof(decimal),
+			typeof(DateOnly),
+			typeof(TimeOnly),
 			typeof(DateTime),
 			typeof(DateTimeOffset),
 			typeof(TimeSpan),
