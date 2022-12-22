@@ -26,7 +26,7 @@ stages:
       clean: true
     # Install the desired .NET SDK.   
     - task: UseDotNet@2
-     displayName: 'Acquire .NET SDK'
+      displayName: 'Acquire .NET SDK'
       inputs:
         packageType: 'sdk'
         version: $(DotNetCoreVersion)
