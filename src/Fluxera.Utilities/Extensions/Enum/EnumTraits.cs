@@ -1,5 +1,8 @@
-﻿// ReSharper disable once CheckNamespace
+﻿#pragma warning disable IDE1006
+
+// ReSharper disable once CheckNamespace
 // ReSharper disable StaticMemberInGenericType
+// ReSharper disable InconsistentNaming
 
 namespace Fluxera.Utilities.Extensions
 {
