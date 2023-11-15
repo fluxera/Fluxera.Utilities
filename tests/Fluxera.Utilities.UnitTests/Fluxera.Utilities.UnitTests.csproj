@@ -1,43 +1,43 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
-	  <IsPackable>false</IsPackable>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<IsPackable>false</IsPackable>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <Compile Remove="Extensions\Reflection\**" />
-    <Compile Remove="Extensions\Uri\**" />
-    <Compile Remove="Extensions\ValueType\**" />
-    <EmbeddedResource Remove="Extensions\Reflection\**" />
-    <EmbeddedResource Remove="Extensions\Uri\**" />
-    <EmbeddedResource Remove="Extensions\ValueType\**" />
-    <None Remove="Extensions\Reflection\**" />
-    <None Remove="Extensions\Uri\**" />
-    <None Remove="Extensions\ValueType\**" />
-  </ItemGroup>
+	<ItemGroup>
+		<Compile Remove="Extensions\Reflection\**" />
+		<Compile Remove="Extensions\Uri\**" />
+		<Compile Remove="Extensions\ValueType\**" />
+		<EmbeddedResource Remove="Extensions\Reflection\**" />
+		<EmbeddedResource Remove="Extensions\Uri\**" />
+		<EmbeddedResource Remove="Extensions\ValueType\**" />
+		<None Remove="Extensions\Reflection\**" />
+		<None Remove="Extensions\Uri\**" />
+		<None Remove="Extensions\ValueType\**" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <None Remove="Properties\Test.txt" />
-  </ItemGroup>
+	<ItemGroup>
+		<None Remove="Properties\Test.txt" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <EmbeddedResource Include="Properties\Test.txt" />
-  </ItemGroup>
+	<ItemGroup>
+		<EmbeddedResource Include="Properties\Test.txt" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="FluentAssertions" Version="6.11.0" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.6.3" />
-    <PackageReference Include="NUnit" Version="3.13.3" />
-    <PackageReference Include="NUnit3TestAdapter" Version="4.5.0" />
-    <PackageReference Include="coverlet.collector" Version="6.0.0">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="FluentAssertions" Version="6.12.0" />
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
+		<PackageReference Include="NUnit" Version="3.14.0" />
+		<PackageReference Include="NUnit3TestAdapter" Version="4.5.0" />
+		<PackageReference Include="coverlet.collector" Version="6.0.0">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\src\Fluxera.Utilities\Fluxera.Utilities.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\..\src\Fluxera.Utilities\Fluxera.Utilities.csproj" />
+	</ItemGroup>
 
 </Project>
