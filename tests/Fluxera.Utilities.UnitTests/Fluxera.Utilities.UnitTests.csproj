@@ -1,21 +1,9 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>net8.0</TargetFramework>
+		<TargetFrameworks>net6.0;net7.0;net8.0</TargetFrameworks>
 		<IsPackable>false</IsPackable>
 	</PropertyGroup>
-
-	<ItemGroup>
-		<Compile Remove="Extensions\Reflection\**" />
-		<Compile Remove="Extensions\Uri\**" />
-		<Compile Remove="Extensions\ValueType\**" />
-		<EmbeddedResource Remove="Extensions\Reflection\**" />
-		<EmbeddedResource Remove="Extensions\Uri\**" />
-		<EmbeddedResource Remove="Extensions\ValueType\**" />
-		<None Remove="Extensions\Reflection\**" />
-		<None Remove="Extensions\Uri\**" />
-		<None Remove="Extensions\ValueType\**" />
-	</ItemGroup>
 
 	<ItemGroup>
 		<None Remove="Properties\Test.txt" />
