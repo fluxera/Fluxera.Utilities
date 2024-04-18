@@ -5,9 +5,9 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<Title>Fluxera.Utilities</Title>
-		<Description>A collection of common utilities and extension methods.</Description>
-		<PackageTags>fluxera;library;utilities</PackageTags>
+		<Title>Fluxera.Linq.Expressions</Title>
+		<Description>A collection of LINQ expression utilities and extension methods.</Description>
+		<PackageTags>fluxera;library;linq;expressions</PackageTags>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -24,8 +24,8 @@
 	<ItemGroup>
 		<PackageReference Include="Fluxera.Guards" Version="8.0.2" />
 		<PackageReference Include="GitVersion.MsBuild" Version="5.12.0">
-			<PrivateAssets>all</PrivateAssets>
-			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		  <PrivateAssets>all</PrivateAssets>
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
 		<PackageReference Include="JetBrains.Annotations" Version="2023.3.0" PrivateAssets="All" />
 	</ItemGroup>
