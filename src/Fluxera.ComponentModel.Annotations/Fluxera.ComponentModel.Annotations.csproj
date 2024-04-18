@@ -11,7 +11,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<None Include="..\..\README.md" Link="Properties\README.md">
+		<None Include="Properties\README.md">
 			<Pack>true</Pack>
 			<PackagePath>\</PackagePath>
 		</None>
