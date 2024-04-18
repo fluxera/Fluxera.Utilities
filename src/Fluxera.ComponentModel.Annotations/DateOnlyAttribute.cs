@@ -1,0 +1,1 @@
+namespace Fluxera.ComponentModel.Annotations{	using System;	using JetBrains.Annotations;	/// <summary>	///		A marker attribute to signal potential data stores to only store the date.	/// </summary>	[PublicAPI]	[AttributeUsage(AttributeTargets.Property | AttributeTargets.Field)]	public sealed class DateOnlyAttribute : Attribute	{	}}
