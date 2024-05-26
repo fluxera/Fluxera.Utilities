@@ -3,8 +3,6 @@
 namespace Fluxera.Utilities.Extensions
 {
 	using System.Collections.Generic;
-	using System.Linq;
-	using Fluxera.Guards;
 
 	/// <summary>
 	///     Extension methods for the <see cref="List{T}" /> type.
@@ -20,9 +18,9 @@ namespace Fluxera.Utilities.Extensions
 		/// <param name="comparer">The optional item comparer.</param>
 		public static void AddRangeSorted<T>(this List<T> target, IEnumerable<T> items, IComparer<T> comparer = null)
 		{
-			Guard.Against.Null(target, nameof(target));
+			Guard.ThrowIfNull(target);
 
-			items ??= Enumerable.Empty<T>();
+			items ??= [];
 
 			foreach(T item in items)
 			{

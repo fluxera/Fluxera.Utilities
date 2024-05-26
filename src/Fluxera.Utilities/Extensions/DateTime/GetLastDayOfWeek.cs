@@ -4,7 +4,6 @@ namespace Fluxera.Utilities.Extensions
 {
 	using System;
 	using System.Globalization;
-	using Fluxera.Guards;
 
 	/// <summary>
 	///     Extension methods for the <see cref="DateTime" /> type.
@@ -29,7 +28,7 @@ namespace Fluxera.Utilities.Extensions
 		/// <returns>The last day of the week</returns>
 		public static DateTime GetLastDayOfWeek(this DateTime date, CultureInfo cultureInfo)
 		{
-			Guard.Against.Null(cultureInfo, nameof(cultureInfo));
+			Guard.ThrowIfNull(cultureInfo);
 
 			return date.GetFirstDayOfWeek(cultureInfo).AddDays(6);
 		}

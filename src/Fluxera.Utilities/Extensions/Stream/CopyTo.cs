@@ -4,7 +4,6 @@ namespace Fluxera.Utilities.Extensions
 {
 	using System;
 	using System.IO;
-	using Fluxera.Guards;
 
 	/// <summary>
 	///     Extension methods for the <see cref="Stream" /> type.
@@ -31,11 +30,11 @@ namespace Fluxera.Utilities.Extensions
 		/// <exception cref="ArgumentException"></exception>
 		public static void CopyTo(this Stream stream, Stream targetStream, int bufferSize)
 		{
-			Guard.Against.Null(stream, nameof(stream));
-			Guard.Against.Null(targetStream, nameof(targetStream));
+			Guard.ThrowIfNull(stream);
+			Guard.ThrowIfNull(targetStream);
 
-			Guard.Against.False(stream.CanRead, nameof(stream), "The stream does not support reading.");
-			Guard.Against.False(targetStream.CanWrite, nameof(targetStream), "The stream does not support writing.");
+			Guard.ThrowIfFalse(stream.CanRead, message: "The stream does not support reading.");
+			Guard.ThrowIfFalse(targetStream.CanWrite, message: "The stream does not support writing.");
 
 			byte[] buffer = new byte[bufferSize];
 			int bytesRead;

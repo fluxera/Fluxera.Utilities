@@ -2,8 +2,6 @@
 
 namespace Fluxera.Utilities.Extensions
 {
-	using Fluxera.Guards;
-
 	/// <summary>
 	///     Extension methods for the <see cref="string" /> type.
 	/// </summary>
@@ -16,7 +14,7 @@ namespace Fluxera.Utilities.Extensions
 		/// <returns>The dasherized string.</returns>
 		public static string Dasherize(this string str)
 		{
-			Guard.Against.NullOrWhiteSpace(str, nameof(str));
+			Guard.ThrowIfNullOrWhiteSpace(str);
 
 			return Inflector.Dasherize(str);
 		}

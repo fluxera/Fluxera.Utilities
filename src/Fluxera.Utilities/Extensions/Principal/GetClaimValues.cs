@@ -5,7 +5,6 @@ namespace Fluxera.Utilities.Extensions
 	using System.Collections.Generic;
 	using System.Linq;
 	using System.Security.Claims;
-	using Fluxera.Guards;
 
 	/// <summary>
 	///     Extension methods for the <see cref="ClaimsPrincipal" /> type.
@@ -20,8 +19,8 @@ namespace Fluxera.Utilities.Extensions
 		/// <returns>The values of the claim or null.</returns>
 		public static IEnumerable<string> GetClaimValues(this ClaimsPrincipal principal, string claim)
 		{
-			Guard.Against.Null(principal, nameof(principal));
-			Guard.Against.NullOrWhiteSpace(claim, nameof(claim));
+			Guard.ThrowIfNull(principal);
+			Guard.ThrowIfNullOrWhiteSpace(claim);
 
 			return principal.FindAll(x => x.Type == claim).Select(x => x.Value);
 		}

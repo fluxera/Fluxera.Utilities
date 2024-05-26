@@ -3,7 +3,6 @@
 namespace Fluxera.Utilities.Extensions
 {
 	using System;
-	using Fluxera.Guards;
 
 	/// <summary>
 	///     Extension methods for the <see cref="string" /> type.
@@ -15,7 +14,7 @@ namespace Fluxera.Utilities.Extensions
 		/// </summary>
 		public static string Right(this string str, int length)
 		{
-			Guard.Against.NullOrWhiteSpace(str, nameof(str));
+			Guard.ThrowIfNullOrWhiteSpace(str);
 
 			if(str.Length < length)
 			{

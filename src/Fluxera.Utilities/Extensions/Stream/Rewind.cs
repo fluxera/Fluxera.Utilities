@@ -4,7 +4,6 @@ namespace Fluxera.Utilities.Extensions
 {
 	using System;
 	using System.IO;
-	using Fluxera.Guards;
 	using JetBrains.Annotations;
 
 	/// <summary>
@@ -20,8 +19,8 @@ namespace Fluxera.Utilities.Extensions
 		/// <exception cref="ArgumentException"></exception>
 		public static void Rewind(this Stream stream)
 		{
-			Guard.Against.Null(stream, nameof(stream));
-			Guard.Against.False(stream.CanSeek, nameof(stream), "The stream does not support seeking.");
+			Guard.ThrowIfNull(stream);
+			Guard.ThrowIfFalse(stream.CanSeek, message: "The stream does not support seeking.");
 
 			stream.Seek(0, SeekOrigin.Begin);
 		}

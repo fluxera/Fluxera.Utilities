@@ -2,7 +2,6 @@
 
 namespace Fluxera.Utilities.Extensions
 {
-	using Fluxera.Guards;
 	using JetBrains.Annotations;
 
 	/// <summary>
@@ -21,7 +20,7 @@ namespace Fluxera.Utilities.Extensions
 		[Pure]
 		public static string Repeat(this char input, int count)
 		{
-			Guard.Against.Negative(count, nameof(count));
+			Guard.ThrowIfNegative(count);
 
 			string str = string.Empty;
 			count.Times(() => str = string.Concat(str, input));
@@ -39,7 +38,7 @@ namespace Fluxera.Utilities.Extensions
 		[Pure]
 		public static string Repeat(this char input, int count)
 		{
-			Guard.Against.Negative(count, nameof(count));
+			Guard.ThrowIfNegative(count);
 
 			string str = string.Empty;
 			count.Times(() => str = string.Concat(str, input));

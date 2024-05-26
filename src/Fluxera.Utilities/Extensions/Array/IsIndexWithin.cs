@@ -3,7 +3,6 @@
 namespace Fluxera.Utilities.Extensions
 {
 	using System;
-	using Fluxera.Guards;
 	using JetBrains.Annotations;
 
 	/// <summary>
@@ -20,7 +19,7 @@ namespace Fluxera.Utilities.Extensions
 		/// <returns>True, if the index lies within the array.</returns>
 		public static bool IsIndexWithin(this Array source, int index)
 		{
-			Guard.Against.Null(source, nameof(source));
+			Guard.ThrowIfNull(source);
 
 			return index >= 0 && index < source.Length;
 		}

@@ -7,8 +7,8 @@ namespace Fluxera.Utilities.Extensions
 
 	public static partial class TypeExtensions
 	{
-		private static readonly HashSet<Type> extraPrimitiveTypes = new HashSet<Type>
-		{
+		private static readonly HashSet<Type> ExtraPrimitiveTypes =
+		[
 			typeof(string),
 			typeof(decimal),
 			typeof(DateOnly),
@@ -17,14 +17,14 @@ namespace Fluxera.Utilities.Extensions
 			typeof(DateTimeOffset),
 			typeof(TimeSpan),
 			typeof(Guid)
-		};
+		];
 
 		/// <summary>
 		///     Determines whether the specified type is a primitive. It automatically
-		///     unwraps the type of a nullable.
+		///     unwraps the wrapped type of the nullable.
 		/// </summary>
 		/// <param name="type">The type.</param>
-		/// <param name="includeEnums">if set to <c>true</c> include enums.</param>
+		/// <param name="includeEnums">If set to <c>true</c> include enums.</param>
 		/// <returns>
 		///     <c>true</c> if the specified type is a primitive; otherwise, <c>false</c>.
 		/// </returns>
@@ -42,7 +42,7 @@ namespace Fluxera.Utilities.Extensions
 				return true;
 			}
 
-			return extraPrimitiveTypes.Contains(type);
+			return ExtraPrimitiveTypes.Contains(type);
 		}
 	}
 }

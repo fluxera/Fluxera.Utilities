@@ -3,7 +3,6 @@
 namespace Fluxera.Utilities.Extensions
 {
 	using System.IO;
-	using Fluxera.Guards;
 
 	/// <summary>
 	///     Extension methods for the <see cref="Stream" /> type.
@@ -17,7 +16,7 @@ namespace Fluxera.Utilities.Extensions
 		/// <param name="bytes">The byte array / buffer.</param>
 		public static void Write(this Stream stream, byte[] bytes)
 		{
-			Guard.Against.Null(stream, nameof(stream));
+			Guard.ThrowIfNull(stream);
 
 			stream.Write(bytes, 0, bytes.Length);
 		}

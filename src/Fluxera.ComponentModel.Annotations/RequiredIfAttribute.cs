@@ -2,7 +2,6 @@
 {
 	using System;
 	using System.ComponentModel.DataAnnotations;
-	using Fluxera.Guards;
 	using JetBrains.Annotations;
 
 	/// <summary>
@@ -25,8 +24,8 @@
 		/// <param name="desiredValues">The desired values are OR-ed when evaluating.</param>
 		public RequiredIfAttribute([InvokerParameterName] string propertyName, params object[] desiredValues)
 		{
-			Guard.Against.NullOrWhiteSpace(propertyName, nameof(propertyName));
-			Guard.Against.Null(desiredValues, nameof(desiredValues));
+			Guard.ThrowIfNullOrWhiteSpace(propertyName);
+			Guard.ThrowIfNull(desiredValues);
 
 			this.propertyName = propertyName;
 			this.desiredValues = desiredValues;

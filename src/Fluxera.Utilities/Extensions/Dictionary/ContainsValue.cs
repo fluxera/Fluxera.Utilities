@@ -5,7 +5,6 @@ namespace Fluxera.Utilities.Extensions
 	using System;
 	using System.Collections.Generic;
 	using System.Linq;
-	using Fluxera.Guards;
 	using JetBrains.Annotations;
 
 	/// <summary>
@@ -25,7 +24,7 @@ namespace Fluxera.Utilities.Extensions
 		/// <exception cref="ArgumentNullException"></exception>
 		public static bool ContainsValue<TKey, TValue>(this IDictionary<TKey, TValue> dictionary, TValue value)
 		{
-			Guard.Against.Null(dictionary, nameof(dictionary));
+			Guard.ThrowIfNull(dictionary);
 
 			return dictionary.Values.Any(x => x.Equals(value));
 		}

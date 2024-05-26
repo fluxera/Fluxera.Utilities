@@ -4,7 +4,6 @@ namespace Fluxera.Utilities.Extensions
 {
 	using System;
 	using System.Collections.Generic;
-	using Fluxera.Guards;
 
 	/// <summary>
 	///     Extension methods for the <see cref="IEnumerable{T}" /> type.
@@ -19,8 +18,8 @@ namespace Fluxera.Utilities.Extensions
 		/// <param name="action">The action execute.</param>
 		public static void ForEach<T>(this IEnumerable<T> enumerable, Action<T> action)
 		{
-			enumerable = Guard.Against.Null(enumerable);
-			action = Guard.Against.Null(action);
+			enumerable = Guard.ThrowIfNull(enumerable);
+			action = Guard.ThrowIfNull(action);
 
 			foreach(T item in enumerable)
 			{

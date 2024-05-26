@@ -4,7 +4,6 @@
 	using System.Collections;
 	using System.ComponentModel.DataAnnotations;
 	using System.Linq;
-	using Fluxera.Guards;
 	using JetBrains.Annotations;
 
 	/// <summary>
@@ -20,7 +19,7 @@
 		/// <param name="maximumLength"></param>
 		public ListMaxLengthAttribute(int maximumLength)
 		{
-			Guard.Against.Negative(maximumLength, nameof(maximumLength));
+			Guard.ThrowIfNegative(maximumLength);
 
 			this.MaximumLength = maximumLength;
 		}

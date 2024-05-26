@@ -2,8 +2,6 @@
 
 namespace Fluxera.Utilities.Extensions
 {
-	using Fluxera.Guards;
-
 	/// <summary>
 	///     Extension methods for the <see cref="string" /> type.
 	/// </summary>
@@ -17,7 +15,7 @@ namespace Fluxera.Utilities.Extensions
 		/// <returns>The string including the suffix.</returns>
 		public static string EnsureEndsWith(this string str, string suffix)
 		{
-			Guard.Against.NullOrWhiteSpace(str, nameof(str));
+			Guard.ThrowIfNullOrWhiteSpace(str);
 
 			return str.EndsWith(suffix) ? str : string.Concat(str, suffix);
 		}
@@ -30,7 +28,7 @@ namespace Fluxera.Utilities.Extensions
 		/// <returns>The string including the suffix.</returns>
 		public static string EnsureEndsWith(this string str, char suffix)
 		{
-			Guard.Against.NullOrWhiteSpace(str, nameof(str));
+			Guard.ThrowIfNullOrWhiteSpace(str);
 
 			return str.EndsWith(suffix.ToString()) ? str : string.Concat(str, suffix);
 		}

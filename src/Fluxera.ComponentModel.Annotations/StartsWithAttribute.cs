@@ -2,7 +2,6 @@
 {
 	using System;
 	using System.ComponentModel.DataAnnotations;
-	using Fluxera.Guards;
 	using JetBrains.Annotations;
 
 	/// <summary>
@@ -19,7 +18,7 @@
 		/// <param name="stringComparison"></param>
 		public StartsWithAttribute(string start, StringComparison stringComparison = StringComparison.InvariantCultureIgnoreCase)
 		{
-			Guard.Against.NullOrEmpty(start, nameof(start));
+			Guard.ThrowIfNullOrEmpty(start);
 
 			this.Start = start;
 			this.StringComparison = stringComparison;

@@ -3,7 +3,6 @@
 namespace Fluxera.Utilities.Extensions
 {
 	using System;
-	using Fluxera.Guards;
 	using JetBrains.Annotations;
 
 	/// <summary>
@@ -20,7 +19,7 @@ namespace Fluxera.Utilities.Extensions
 		/// <returns>The instantiated object.</returns>
 		public static object CreateInstance(this Type type, params object[] constructorParameters)
 		{
-			Guard.Against.Null(type, nameof(type));
+			Guard.ThrowIfNull(type);
 
 			return type.CreateInstance<object>(constructorParameters);
 		}

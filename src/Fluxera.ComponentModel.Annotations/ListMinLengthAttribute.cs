@@ -4,7 +4,6 @@
 	using System.Collections;
 	using System.ComponentModel.DataAnnotations;
 	using System.Linq;
-	using Fluxera.Guards;
 	using JetBrains.Annotations;
 
 	/// <summary>
@@ -20,7 +19,7 @@
 		/// <param name="minimumLength"></param>
 		public ListMinLengthAttribute(int minimumLength)
 		{
-			Guard.Against.Negative(minimumLength, nameof(minimumLength));
+			Guard.ThrowIfNegative(minimumLength);
 
 			this.MinimumLength = minimumLength;
 		}

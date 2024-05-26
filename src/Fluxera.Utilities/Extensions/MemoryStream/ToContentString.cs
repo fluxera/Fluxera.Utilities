@@ -5,7 +5,6 @@ namespace Fluxera.Utilities.Extensions
 	using System.IO;
 	using System.Text;
 	using System.Threading.Tasks;
-	using Fluxera.Guards;
 	using JetBrains.Annotations;
 
 	/// <summary>
@@ -32,8 +31,8 @@ namespace Fluxera.Utilities.Extensions
 		/// <returns>The content of the stream as string.</returns>
 		public static async Task<string> ToContentString(this MemoryStream stream, Encoding encoding)
 		{
-			Guard.Against.Null(stream, nameof(stream));
-			Guard.Against.Null(encoding, nameof(encoding));
+			Guard.ThrowIfNull(stream);
+			Guard.ThrowIfNull(encoding);
 
 			using(StreamReader reader = new StreamReader(stream, encoding))
 			{

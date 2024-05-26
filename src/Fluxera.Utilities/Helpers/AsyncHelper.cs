@@ -8,7 +8,6 @@ namespace Fluxera.Utilities
 	using System.Security.Principal;
 	using System.Threading;
 	using System.Threading.Tasks;
-	using Fluxera.Guards;
 	using JetBrains.Annotations;
 
 	/// <summary>
@@ -21,7 +20,7 @@ namespace Fluxera.Utilities
 	[PublicAPI]
 	public static class AsyncHelper
 	{
-		private static readonly TaskFactory taskFactory = new TaskFactory(CancellationToken.None,
+		private static readonly TaskFactory TaskFactory = new TaskFactory(CancellationToken.None,
 			TaskCreationOptions.None, TaskContinuationOptions.None, TaskScheduler.Default);
 
 		/// <summary>
@@ -37,7 +36,7 @@ namespace Fluxera.Utilities
 			CultureInfo cultureUi = CultureInfo.CurrentUICulture;
 			CultureInfo culture = CultureInfo.CurrentCulture;
 
-			return taskFactory.StartNew(() =>
+			return TaskFactory.StartNew(() =>
 				{
 					Thread.CurrentPrincipal = principal;
 					Thread.CurrentThread.CurrentCulture = culture;
@@ -61,7 +60,7 @@ namespace Fluxera.Utilities
 			CultureInfo cultureUi = CultureInfo.CurrentUICulture;
 			CultureInfo culture = CultureInfo.CurrentCulture;
 
-			taskFactory.StartNew(() =>
+			TaskFactory.StartNew(() =>
 				{
 					Thread.CurrentPrincipal = principal;
 					Thread.CurrentThread.CurrentCulture = culture;
@@ -80,7 +79,7 @@ namespace Fluxera.Utilities
 		/// <param name="method">A method to check</param>
 		public static bool IsAsync(this MethodInfo method)
 		{
-			Guard.Against.Null(method, nameof(method));
+			Guard.ThrowIfNull(method);
 
 			Type type = method.ReturnType;
 			return type == typeof(Task) ||

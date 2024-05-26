@@ -5,16 +5,15 @@ namespace Fluxera.Utilities
 	using System;
 	using System.Collections.Generic;
 	using System.Linq;
-	using Fluxera.Guards;
 	using JetBrains.Annotations;
 
 	/// <summary>
-	///     A shortcut to use <see cref="Random" /> class.
+	///     A shortcut to use <see cref="System.Random" /> class.
 	/// </summary>
 	[PublicAPI]
 	public static class RandomHelper
 	{
-		private static readonly Random random = new Random();
+		private static readonly Random Random = new Random();
 
 		/// <summary>
 		///     Returns a random number within a specified range.
@@ -31,9 +30,9 @@ namespace Fluxera.Utilities
 		/// </returns>
 		public static int GetRandom(int minValue, int maxValue)
 		{
-			lock(random)
+			lock(Random)
 			{
-				return random.Next(minValue, maxValue);
+				return Random.Next(minValue, maxValue);
 			}
 		}
 
@@ -51,9 +50,9 @@ namespace Fluxera.Utilities
 		/// </returns>
 		public static int GetRandom(int maxValue)
 		{
-			lock(random)
+			lock(Random)
 			{
-				return random.Next(maxValue);
+				return Random.Next(maxValue);
 			}
 		}
 
@@ -63,9 +62,9 @@ namespace Fluxera.Utilities
 		/// <returns>A 32-bit signed integer greater than or equal to zero and less than <see cref="int.MaxValue" />.</returns>
 		public static int GetRandom()
 		{
-			lock(random)
+			lock(Random)
 			{
-				return random.Next();
+				return Random.Next();
 			}
 		}
 
@@ -76,7 +75,7 @@ namespace Fluxera.Utilities
 		/// <param name="items">List of object to select a random one</param>
 		public static T GetRandomOf<T>(params T[] items)
 		{
-			items = Guard.Against.Null(items);
+			items = Guard.ThrowIfNull(items);
 
 			return items[GetRandom(0, items.Length)];
 		}
@@ -88,7 +87,7 @@ namespace Fluxera.Utilities
 		/// <param name="items">List of object to select a random one</param>
 		public static T GetRandomOfList<T>(IList<T> items)
 		{
-			items = Guard.Against.Null(items);
+			items = Guard.ThrowIfNull(items);
 
 			return items[GetRandom(0, items.Count)];
 		}
@@ -100,7 +99,7 @@ namespace Fluxera.Utilities
 		/// <param name="items">items</param>
 		public static IList<T> GenerateRandomizedList<T>(IEnumerable<T> items)
 		{
-			items = Guard.Against.Null(items);
+			items = Guard.ThrowIfNull(items);
 
 			IList<T> currentList = new List<T>(items);
 			IList<T> randomList = new List<T>();

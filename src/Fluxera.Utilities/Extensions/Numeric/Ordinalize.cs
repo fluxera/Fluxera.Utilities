@@ -2,8 +2,6 @@
 
 namespace Fluxera.Utilities.Extensions
 {
-	using Fluxera.Guards;
-
 	/// <summary>
 	///     Extension methods for numeric types.
 	/// </summary>
@@ -16,7 +14,7 @@ namespace Fluxera.Utilities.Extensions
 		/// <returns>The ordinal number as string.</returns>
 		public static string Ordinalize(this byte number)
 		{
-			Guard.Against.Negative(number, nameof(number));
+			Guard.ThrowIfNegative(number);
 
 			return Inflector.Ordinalize(number);
 		}
@@ -28,7 +26,7 @@ namespace Fluxera.Utilities.Extensions
 		/// <returns>The ordinal number as string.</returns>
 		public static string Ordinalize(this short number)
 		{
-			Guard.Against.Negative(number, nameof(number));
+			Guard.ThrowIfNegative(number);
 
 			return Inflector.Ordinalize(number);
 		}
@@ -40,7 +38,7 @@ namespace Fluxera.Utilities.Extensions
 		/// <returns>The ordinal number as string.</returns>
 		public static string Ordinalize(this int number)
 		{
-			Guard.Against.Negative(number, nameof(number));
+			Guard.ThrowIfNegative(number);
 
 			return Inflector.Ordinalize(number);
 		}
@@ -52,7 +50,7 @@ namespace Fluxera.Utilities.Extensions
 		/// <returns>The ordinal number as string.</returns>
 		public static string Ordinalize(this long number)
 		{
-			Guard.Against.Negative(number, nameof(number));
+			Guard.ThrowIfNegative(number);
 
 			return Inflector.Ordinalize(number);
 		}

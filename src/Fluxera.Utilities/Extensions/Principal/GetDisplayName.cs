@@ -4,7 +4,6 @@ namespace Fluxera.Utilities.Extensions
 {
 	using System.Diagnostics;
 	using System.Security.Claims;
-	using Fluxera.Guards;
 
 	/// <summary>
 	///     Extension methods for the <see cref="ClaimsPrincipal" /> type.
@@ -19,7 +18,7 @@ namespace Fluxera.Utilities.Extensions
 		[DebuggerStepThrough]
 		public static string GetDisplayName(this ClaimsPrincipal principal)
 		{
-			principal = Guard.Against.Null(principal);
+			principal = Guard.ThrowIfNull(principal);
 
 			string name = principal.Identity?.Name;
 			if(!string.IsNullOrWhiteSpace(name))

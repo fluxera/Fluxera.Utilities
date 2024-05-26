@@ -2,8 +2,6 @@
 
 namespace Fluxera.Utilities.Extensions
 {
-	using Fluxera.Guards;
-
 	/// <summary>
 	///     Extension methods for the <see cref="string" /> type.
 	/// </summary>
@@ -16,7 +14,7 @@ namespace Fluxera.Utilities.Extensions
 		/// <returns>A string that is the plural form of the input parameter.</returns>
 		public static string Pluralize(this string str)
 		{
-			Guard.Against.NullOrWhiteSpace(str, nameof(str));
+			Guard.ThrowIfNullOrWhiteSpace(str);
 
 			return Inflector.Pluralize(str);
 		}

@@ -5,7 +5,6 @@ namespace Fluxera.Utilities.Extensions
 	using System.IO;
 	using System.Reflection;
 	using System.Threading.Tasks;
-	using Fluxera.Guards;
 	using JetBrains.Annotations;
 
 	/// <summary>
@@ -22,7 +21,7 @@ namespace Fluxera.Utilities.Extensions
 		/// <returns>The content of the resource.</returns>
 		public static async Task<string> GetResourceAsStringAsync(this Assembly assembly, string resourceLocation)
 		{
-			Guard.Against.Null(assembly, nameof(assembly));
+			Guard.ThrowIfNull(assembly);
 
 			string result = string.Empty;
 

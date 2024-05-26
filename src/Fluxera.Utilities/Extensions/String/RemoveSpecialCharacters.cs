@@ -2,9 +2,7 @@
 
 namespace Fluxera.Utilities.Extensions
 {
-	using System;
 	using System.Linq;
-	using Fluxera.Guards;
 
 	/// <summary>
 	///     Extension methods for the <see cref="string" /> type.
@@ -20,20 +18,13 @@ namespace Fluxera.Utilities.Extensions
 		/// <returns>The string without special characters.</returns>
 		public static string RemoveSpecialCharacters(this string str, params char[] ignore)
 		{
-			Guard.Against.NullOrEmpty(str, nameof(str));
+			Guard.ThrowIfNullOrEmpty(str);
 
 			string result = string.Empty;
-			ignore ??= Array.Empty<char>();
+			ignore ??= [];
 
-			foreach(char character in str)
-			{
-				if(char.IsLetterOrDigit(character) || ignore.Contains(character))
-				{
-					result += character;
-				}
-			}
-
-			return result;
+			return str.Where(character => char.IsLetterOrDigit(character) || ignore.Contains(character))
+					  .Aggregate(result, (current, character) => current + character);
 		}
 	}
 }

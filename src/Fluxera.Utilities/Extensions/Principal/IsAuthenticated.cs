@@ -4,7 +4,6 @@ namespace Fluxera.Utilities.Extensions
 {
 	using System.Diagnostics;
 	using System.Security.Principal;
-	using Fluxera.Guards;
 
 	/// <summary>
 	///     Extension methods for the <see cref="IPrincipal" /> type.
@@ -19,7 +18,7 @@ namespace Fluxera.Utilities.Extensions
 		[DebuggerStepThrough]
 		public static bool IsAuthenticated(this IPrincipal principal)
 		{
-			Guard.Against.Null(principal, nameof(principal));
+			Guard.ThrowIfNull(principal);
 
 			return principal.Identity != null && principal.Identity.IsAuthenticated;
 		}

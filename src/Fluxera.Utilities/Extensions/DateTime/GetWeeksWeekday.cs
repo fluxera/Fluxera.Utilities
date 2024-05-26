@@ -4,7 +4,6 @@ namespace Fluxera.Utilities.Extensions
 {
 	using System;
 	using System.Globalization;
-	using Fluxera.Guards;
 
 	/// <summary>
 	///     Extension methods for the <see cref="DateTime" /> type.
@@ -31,7 +30,7 @@ namespace Fluxera.Utilities.Extensions
 		/// <returns>The calculated date.</returns>
 		public static DateTime GetWeeksWeekday(this DateTime date, DayOfWeek weekday, CultureInfo cultureInfo)
 		{
-			Guard.Against.Null(cultureInfo, nameof(cultureInfo));
+			Guard.ThrowIfNull(cultureInfo);
 
 			DateTime firstDayOfWeek = date.GetFirstDayOfWeek(cultureInfo);
 			return firstDayOfWeek.GetNextWeekday(weekday);

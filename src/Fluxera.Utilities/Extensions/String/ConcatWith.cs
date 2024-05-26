@@ -2,8 +2,6 @@
 
 namespace Fluxera.Utilities.Extensions
 {
-	using Fluxera.Guards;
-
 	/// <summary>
 	///     Extension methods for the <see cref="string" /> type.
 	/// </summary>
@@ -17,8 +15,8 @@ namespace Fluxera.Utilities.Extensions
 		/// <returns>The concatenated string.</returns>
 		public static string ConcatWith(this string str, params string[] values)
 		{
-			Guard.Against.NullOrWhiteSpace(str, nameof(str));
-			Guard.Against.NullOrEmpty(values, nameof(values));
+			Guard.ThrowIfNullOrWhiteSpace(str);
+			Guard.ThrowIfNullOrEmpty(values);
 
 			return string.Concat(str, string.Concat(values));
 		}
@@ -32,8 +30,8 @@ namespace Fluxera.Utilities.Extensions
 		/// <returns>The concatenated string</returns>
 		public static string ConcatWith(this string str, char delimiter, params string[] values)
 		{
-			Guard.Against.NullOrWhiteSpace(str, nameof(str));
-			Guard.Against.NullOrEmpty(values, nameof(values));
+			Guard.ThrowIfNullOrWhiteSpace(str);
+			Guard.ThrowIfNullOrEmpty(values);
 
 			string[] valuesToConcat = new string[values.Length];
 			for(int i = 0; i < values.Length; i++)

@@ -4,7 +4,6 @@ namespace Fluxera.Utilities.Extensions
 {
 	using System.IO;
 	using System.Threading.Tasks;
-	using Fluxera.Guards;
 
 	/// <summary>
 	///     Extension methods for the <see cref="Stream" /> type.
@@ -15,11 +14,11 @@ namespace Fluxera.Utilities.Extensions
 		///     Gets all bytes of a <see cref="Stream" />.
 		/// </summary>
 		/// <param name="stream"></param>
-		/// <returns>the bytes.</returns>
+		/// <returns>The data of the stream.</returns>
 		public static byte[] GetBytes(this Stream stream)
 		{
-			Guard.Against.Null(stream, nameof(stream));
-			Guard.Against.False(stream.CanRead, nameof(stream), "The stream does not support reading.");
+			Guard.ThrowIfNull(stream);
+			Guard.ThrowIfFalse(stream.CanRead, message: "The stream does not support reading.");
 
 			byte[] buffer = new byte[16 * 1024];
 			using(MemoryStream ms = new MemoryStream())
@@ -38,11 +37,11 @@ namespace Fluxera.Utilities.Extensions
 		///     Gets all bytes from the steam.
 		/// </summary>
 		/// <param name="stream"></param>
-		/// <returns></returns>
+		/// <returns>The data of the stream.</returns>
 		public static byte[] GetAllBytes(this Stream stream)
 		{
-			Guard.Against.Null(stream, nameof(stream));
-			Guard.Against.False(stream.CanRead, nameof(stream), "The stream does not support reading.");
+			Guard.ThrowIfNull(stream);
+			Guard.ThrowIfFalse(stream.CanRead, message: "The stream does not support reading.");
 
 			using(MemoryStream memoryStream = new MemoryStream())
 			{
@@ -55,11 +54,11 @@ namespace Fluxera.Utilities.Extensions
 		///     Gets all bytes from the steam.
 		/// </summary>
 		/// <param name="stream"></param>
-		/// <returns></returns>
+		/// <returns>The data of the stream.</returns>
 		public static async Task<byte[]> GetAllBytesAsync(this Stream stream)
 		{
-			Guard.Against.Null(stream, nameof(stream));
-			Guard.Against.False(stream.CanRead, nameof(stream), "The stream does not support reading.");
+			Guard.ThrowIfNull(stream);
+			Guard.ThrowIfFalse(stream.CanRead, message: "The stream does not support reading.");
 
 			await using(MemoryStream memoryStream = new MemoryStream())
 			{
