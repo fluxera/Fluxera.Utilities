@@ -2,8 +2,6 @@
 
 namespace Fluxera.Utilities.Extensions
 {
-	using Fluxera.Guards;
-
 	/// <summary>
 	///     Extension methods for the <see cref="string" /> type.
 	/// </summary>
@@ -16,8 +14,8 @@ namespace Fluxera.Utilities.Extensions
 		/// <returns>The ordinalized string.</returns>
 		public static string Ordinalize(this string str)
 		{
-			Guard.Against.NullOrWhiteSpace(str, nameof(str));
-			Guard.Against.False(str.IsNumeric(), nameof(str));
+			Guard.ThrowIfNullOrWhiteSpace(str);
+			Guard.ThrowIfFalse(str.IsNumeric(), message: "The string value must represent a numeric value.");
 
 			return Inflector.Ordinalize(str);
 		}

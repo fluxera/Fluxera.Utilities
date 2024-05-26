@@ -4,7 +4,6 @@ namespace Fluxera.Utilities.Extensions
 {
 	using System;
 	using System.Globalization;
-	using Fluxera.Guards;
 
 	/// <summary>
 	///     Extension methods for the <see cref="string" /> type.
@@ -19,7 +18,7 @@ namespace Fluxera.Utilities.Extensions
 		/// <returns>The formatted string.</returns>
 		public static string FormatWith(this string str, params object[] args)
 		{
-			Guard.Against.NullOrWhiteSpace(str, nameof(str));
+			Guard.ThrowIfNullOrWhiteSpace(str);
 
 			return str.FormatWith(CultureInfo.CurrentCulture, args);
 		}
@@ -33,7 +32,7 @@ namespace Fluxera.Utilities.Extensions
 		/// <returns>The formatted string.</returns>
 		public static string FormatWith(this string str, IFormatProvider formatProvider, params object[] args)
 		{
-			Guard.Against.NullOrWhiteSpace(str, nameof(str));
+			Guard.ThrowIfNullOrWhiteSpace(str);
 
 			formatProvider ??= CultureInfo.CurrentCulture;
 			return string.Format(formatProvider, str, args);

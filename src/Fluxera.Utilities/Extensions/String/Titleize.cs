@@ -2,8 +2,6 @@
 
 namespace Fluxera.Utilities.Extensions
 {
-	using Fluxera.Guards;
-
 	/// <summary>
 	///     Extension methods for the <see cref="string" /> type.
 	/// </summary>
@@ -17,7 +15,7 @@ namespace Fluxera.Utilities.Extensions
 		/// <returns>A string that is in title form.</returns>
 		public static string Titleize(this string str)
 		{
-			Guard.Against.NullOrWhiteSpace(str, nameof(str));
+			Guard.ThrowIfNullOrWhiteSpace(str);
 
 			return Inflector.Titleize(str);
 		}

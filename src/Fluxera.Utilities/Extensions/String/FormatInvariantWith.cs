@@ -3,7 +3,6 @@
 namespace Fluxera.Utilities.Extensions
 {
 	using System.Globalization;
-	using Fluxera.Guards;
 
 	/// <summary>
 	///     Extension methods for the <see cref="string" /> type.
@@ -18,7 +17,7 @@ namespace Fluxera.Utilities.Extensions
 		/// <returns>The formatted string.</returns>
 		public static string FormatInvariantWith(this string str, params object[] args)
 		{
-			Guard.Against.NullOrWhiteSpace(str, nameof(str));
+			Guard.ThrowIfNullOrWhiteSpace(str);
 
 			return str.FormatWith(CultureInfo.InvariantCulture, args);
 		}

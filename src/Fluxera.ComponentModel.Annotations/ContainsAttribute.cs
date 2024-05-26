@@ -2,7 +2,6 @@
 {
 	using System;
 	using System.ComponentModel.DataAnnotations;
-	using Fluxera.Guards;
 	using JetBrains.Annotations;
 
 	/// <summary>
@@ -18,7 +17,7 @@
 		/// <param name="part"></param>
 		public ContainsAttribute(string part)
 		{
-			Guard.Against.NullOrEmpty(part, nameof(part));
+			Guard.ThrowIfNull(part);
 
 			this.Part = part;
 		}

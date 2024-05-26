@@ -13,9 +13,9 @@
 	[PublicAPI]
 	internal static class Inflector
 	{
-		private static readonly List<Rule> plurals = new List<Rule>();
-		private static readonly List<Rule> singulars = new List<Rule>();
-		private static readonly List<string> uncountables = new List<string>();
+		private static readonly List<Rule> Plurals = new List<Rule>();
+		private static readonly List<Rule> Singulars = new List<Rule>();
+		private static readonly List<string> Uncountables = new List<string>();
 
 		static Inflector()
 		{
@@ -92,34 +92,34 @@
 
 		private static void AddUncountable(string word)
 		{
-			uncountables.Add(word.ToLower());
+			Uncountables.Add(word.ToLower());
 		}
 
 		private static void AddPlural(string rule, string replacement)
 		{
-			plurals.Add(new Rule(rule, replacement));
+			Plurals.Add(new Rule(rule, replacement));
 		}
 
 		private static void AddSingular(string rule, string replacement)
 		{
-			singulars.Add(new Rule(rule, replacement));
+			Singulars.Add(new Rule(rule, replacement));
 		}
 
 		internal static string Pluralize(string word)
 		{
-			return ApplyRules(plurals, word);
+			return ApplyRules(Plurals, word);
 		}
 
 		internal static string Singularize(string word)
 		{
-			return ApplyRules(singulars, word);
+			return ApplyRules(Singulars, word);
 		}
 
 		private static string ApplyRules(IReadOnlyList<Rule> rules, string word)
 		{
 			string result = word;
 
-			if(!uncountables.Contains(word.ToLower()))
+			if(!Uncountables.Contains(word.ToLower()))
 			{
 				for(int i = rules.Count - 1; i >= 0; i--)
 				{

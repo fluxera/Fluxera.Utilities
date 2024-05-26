@@ -5,7 +5,6 @@ namespace Fluxera.Utilities.Extensions
 	using System.Collections.Generic;
 	using System.Collections.ObjectModel;
 	using System.Linq;
-	using Fluxera.Guards;
 	using JetBrains.Annotations;
 
 	/// <summary>
@@ -22,7 +21,7 @@ namespace Fluxera.Utilities.Extensions
 		/// <returns>A write-protected collection.</returns>
 		public static IReadOnlyCollection<T> AsReadOnly<T>(this IEnumerable<T> enumerable)
 		{
-			enumerable = Guard.Against.Null(enumerable);
+			enumerable = Guard.ThrowIfNull(enumerable);
 
 			return new ReadOnlyCollection<T>(enumerable.ToList());
 		}

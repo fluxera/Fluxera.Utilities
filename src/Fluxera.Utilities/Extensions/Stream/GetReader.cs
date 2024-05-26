@@ -5,7 +5,6 @@ namespace Fluxera.Utilities.Extensions
 	using System;
 	using System.IO;
 	using System.Text;
-	using Fluxera.Guards;
 
 	/// <summary>
 	///     Extension methods for the <see cref="Stream" /> type.
@@ -32,10 +31,10 @@ namespace Fluxera.Utilities.Extensions
 		/// <exception cref="ArgumentException"></exception>
 		public static StreamReader GetReader(this Stream stream, Encoding encoding)
 		{
-			Guard.Against.Null(stream, nameof(stream));
-			Guard.Against.False(stream.CanRead, nameof(stream), "The stream does not support reading.");
+			Guard.ThrowIfNull(stream);
+			Guard.ThrowIfFalse(stream.CanRead, message: "The stream does not support reading.");
 
-			encoding = encoding ?? Encoding.UTF8;
+			encoding ??= Encoding.UTF8;
 			return new StreamReader(stream, encoding);
 		}
 	}

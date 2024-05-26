@@ -4,7 +4,6 @@ namespace Fluxera.Utilities.Extensions
 {
 	using System;
 	using System.Numerics;
-	using Fluxera.Guards;
 	using JetBrains.Annotations;
 
 	/// <summary>
@@ -23,9 +22,8 @@ namespace Fluxera.Utilities.Extensions
 		/// <exception cref="ArgumentNullException"></exception>
 		public static void Times<T>(this T value, Action action) where T : INumber<T>
 		{
-			// Against Negative
-			Guard.Against.False(T.IsPositive(value), message: "The number must be positive.");
-			Guard.Against.Null(action, nameof(action));
+			Guard.ThrowIfNegative(value);
+			Guard.ThrowIfNull(action);
 
 			for(T i = T.Zero; i < value; i++)
 			{
@@ -42,9 +40,8 @@ namespace Fluxera.Utilities.Extensions
 		/// <exception cref="ArgumentNullException"></exception>
 		public static void Times<T>(this T value, Action<T> action) where T : INumber<T>
 		{
-			// Against Negative
-			Guard.Against.False(T.IsPositive(value), message: "The number must be positive.");
-			Guard.Against.Null(action, nameof(action));
+			Guard.ThrowIfNegative(value);
+			Guard.ThrowIfNull(action);
 
 			for(T i = T.Zero; i < value; i++)
 			{
@@ -63,8 +60,8 @@ namespace Fluxera.Utilities.Extensions
 		/// <exception cref="ArgumentNullException"></exception>
 		public static void Times(this byte value, Action action)
 		{
-			Guard.Against.Negative(value, nameof(value));
-			Guard.Against.Null(action, nameof(action));
+			Guard.ThrowIfNegative(value);
+			Guard.ThrowIfNull(action);
 
 			Times<byte>(value, action);
 		}
@@ -78,8 +75,8 @@ namespace Fluxera.Utilities.Extensions
 		/// <exception cref="ArgumentNullException"></exception>
 		public static void Times(this byte value, Action<byte> action)
 		{
-			Guard.Against.Negative(value, nameof(value));
-			Guard.Against.Null(action, nameof(action));
+			Guard.ThrowIfNegative(value);
+			Guard.ThrowIfNull(action);
 
 			Times<byte>(value, action);
 		}
@@ -93,8 +90,8 @@ namespace Fluxera.Utilities.Extensions
 		/// <exception cref="ArgumentNullException"></exception>
 		public static void Times(this short value, Action action)
 		{
-			Guard.Against.Negative(value, nameof(value));
-			Guard.Against.Null(action, nameof(action));
+			Guard.ThrowIfNegative(value);
+			Guard.ThrowIfNull(action);
 
 			Times<short>(value, action);
 		}
@@ -108,8 +105,8 @@ namespace Fluxera.Utilities.Extensions
 		/// <exception cref="ArgumentNullException"></exception>
 		public static void Times(this short value, Action<short> action)
 		{
-			Guard.Against.Negative(value, nameof(value));
-			Guard.Against.Null(action, nameof(action));
+			Guard.ThrowIfNegative(value);
+			Guard.ThrowIfNull(action);
 
 			Times<short>(value, action);
 		}
@@ -123,8 +120,8 @@ namespace Fluxera.Utilities.Extensions
 		/// <exception cref="ArgumentNullException"></exception>
 		public static void Times(this int value, Action action)
 		{
-			Guard.Against.Negative(value, nameof(value));
-			Guard.Against.Null(action, nameof(action));
+			Guard.ThrowIfNegative(value);
+			Guard.ThrowIfNull(action);
 
 			Times<int>(value, action);
 		}
@@ -138,8 +135,8 @@ namespace Fluxera.Utilities.Extensions
 		/// <exception cref="ArgumentNullException"></exception>
 		public static void Times(this int value, Action<int> action)
 		{
-			Guard.Against.Negative(value, nameof(value));
-			Guard.Against.Null(action, nameof(action));
+			Guard.ThrowIfNegative(value);
+			Guard.ThrowIfNull(action);
 
 			Times<int>(value, action);
 		}
@@ -154,8 +151,8 @@ namespace Fluxera.Utilities.Extensions
 		/// <exception cref="ArgumentNullException"></exception>
 		public static void Times(this long value, Action action)
 		{
-			Guard.Against.Negative(value, nameof(value));
-			Guard.Against.Null(action, nameof(action));
+			Guard.ThrowIfNegative(value);
+			Guard.ThrowIfNull(action);
 
 			Times<long>(value, action);
 		}
@@ -169,8 +166,8 @@ namespace Fluxera.Utilities.Extensions
 		/// <exception cref="ArgumentNullException"></exception>
 		public static void Times(this long value, Action<long> action)
 		{
-			Guard.Against.Negative(value, nameof(value));
-			Guard.Against.Null(action, nameof(action));
+			Guard.ThrowIfNegative(value);
+			Guard.ThrowIfNull(action);
 
 			Times<long>(value, action);
 		}

@@ -1,7 +1,6 @@
 ﻿namespace Fluxera.ComponentModel.Annotations
 {
 	using System;
-	using Fluxera.Guards;
 	using JetBrains.Annotations;
 
 	/// <summary>
@@ -30,7 +29,7 @@
 		/// <param name="referencedEntityType"></param>
 		public ReferenceAttribute(Type referencedEntityType)
 		{
-			Guard.Against.Null(referencedEntityType);
+			Guard.ThrowIfNull(referencedEntityType);
 
 			this.ReferencedEntityName = referencedEntityType.Name;
 		}
@@ -41,7 +40,7 @@
 		/// <param name="referencedEntityName"></param>
 		public ReferenceAttribute(string referencedEntityName)
 		{
-			Guard.Against.NullOrWhiteSpace(referencedEntityName);
+			Guard.ThrowIfNullOrWhiteSpace(referencedEntityName);
 
 			this.ReferencedEntityName = referencedEntityName;
 		}

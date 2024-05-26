@@ -3,7 +3,6 @@
 namespace Fluxera.Utilities.Extensions
 {
 	using System.Security.Claims;
-	using Fluxera.Guards;
 	using JetBrains.Annotations;
 
 	/// <summary>
@@ -20,8 +19,8 @@ namespace Fluxera.Utilities.Extensions
 		/// <returns>The values of the claim or null.</returns>
 		public static string GetClaimValue(this ClaimsPrincipal principal, string claim)
 		{
-			Guard.Against.Null(principal, nameof(principal));
-			Guard.Against.NullOrWhiteSpace(claim, nameof(claim));
+			Guard.ThrowIfNull(principal);
+			Guard.ThrowIfNullOrWhiteSpace(claim);
 
 			return principal.FindFirst(claim)?.Value;
 		}

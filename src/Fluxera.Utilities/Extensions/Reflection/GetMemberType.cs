@@ -4,7 +4,6 @@ namespace Fluxera.Utilities.Extensions
 {
 	using System;
 	using System.Reflection;
-	using Fluxera.Guards;
 
 	/// <summary>
 	///     Extension methods for the <see cref="MemberInfo" /> type.
@@ -18,7 +17,7 @@ namespace Fluxera.Utilities.Extensions
 		/// <returns>The underlying type of the member.</returns>
 		public static Type GetMemberType(this MemberInfo memberInfo)
 		{
-			Guard.Against.Null(memberInfo, nameof(memberInfo));
+			Guard.ThrowIfNull(memberInfo);
 
 			return memberInfo switch
 			{

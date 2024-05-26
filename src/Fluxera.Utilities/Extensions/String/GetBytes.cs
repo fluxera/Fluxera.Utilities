@@ -3,7 +3,6 @@
 namespace Fluxera.Utilities.Extensions
 {
 	using System.Text;
-	using Fluxera.Guards;
 
 	/// <summary>
 	///     Extension methods for the <see cref="string" /> type.
@@ -17,7 +16,7 @@ namespace Fluxera.Utilities.Extensions
 		/// <returns>The created byte array.</returns>
 		public static byte[] GetBytes(this string str)
 		{
-			Guard.Against.NullOrWhiteSpace(str, nameof(str));
+			Guard.ThrowIfNullOrWhiteSpace(str);
 
 			return str.GetBytes(Encoding.UTF8);
 		}
@@ -30,7 +29,7 @@ namespace Fluxera.Utilities.Extensions
 		/// <returns>The created byte array.</returns>
 		public static byte[] GetBytes(this string str, Encoding encoding)
 		{
-			Guard.Against.NullOrWhiteSpace(str, nameof(str));
+			Guard.ThrowIfNullOrWhiteSpace(str);
 
 			encoding ??= Encoding.UTF8;
 			return encoding.GetBytes(str);

@@ -4,7 +4,6 @@ namespace Fluxera.Utilities.Extensions
 {
 	using System;
 	using System.IO;
-	using Fluxera.Guards;
 
 	/// <summary>
 	///     Extension methods for the <see cref="Stream" /> type.
@@ -19,7 +18,7 @@ namespace Fluxera.Utilities.Extensions
 		/// <exception cref="ArgumentException"></exception>
 		public static MemoryStream CopyToMemory(this Stream stream)
 		{
-			Guard.Against.Null(stream, nameof(stream));
+			Guard.ThrowIfNull(stream);
 
 			MemoryStream memoryStream = new MemoryStream((int)stream.Length);
 			CopyTo(stream, memoryStream);

@@ -5,7 +5,6 @@ namespace Fluxera.Utilities.Extensions
 	using System;
 	using System.Collections.Generic;
 	using System.Linq;
-	using Fluxera.Guards;
 	using JetBrains.Annotations;
 
 	/// <summary>
@@ -23,7 +22,7 @@ namespace Fluxera.Utilities.Extensions
 		/// <returns>Returns True if added, returns False if not.</returns>
 		public static bool AddIfNotContains<T>(this ICollection<T> collection, T item)
 		{
-			Guard.Against.Null(collection, nameof(collection));
+			Guard.ThrowIfNull(collection);
 
 			if(collection.Contains(item))
 			{
@@ -43,7 +42,7 @@ namespace Fluxera.Utilities.Extensions
 		/// <returns>Returns the added items.</returns>
 		public static IEnumerable<T> AddIfNotContains<T>(this ICollection<T> collection, IEnumerable<T> items)
 		{
-			Guard.Against.Null(collection, nameof(collection));
+			Guard.ThrowIfNull(collection);
 
 			IList<T> addedItems = new List<T>();
 
@@ -73,9 +72,9 @@ namespace Fluxera.Utilities.Extensions
 		public static bool AddIfNotContains<T>(this ICollection<T> collection,
 			Func<T, bool> predicate, Func<T> itemFactory)
 		{
-			Guard.Against.Null(collection, nameof(collection));
-			Guard.Against.Null(predicate, nameof(predicate));
-			Guard.Against.Null(itemFactory, nameof(itemFactory));
+			Guard.ThrowIfNull(collection);
+			Guard.ThrowIfNull(predicate);
+			Guard.ThrowIfNull(itemFactory);
 
 			if(collection.Any(predicate))
 			{
@@ -97,9 +96,9 @@ namespace Fluxera.Utilities.Extensions
 		/// <returns>Returns True if added, returns False if not.</returns>
 		public static bool AddIfNotContains<T>(this ICollection<T> collection, Predicate<T> predicate, Func<T> itemFactory)
 		{
-			Guard.Against.Null(collection, nameof(collection));
-			Guard.Against.Null(predicate, nameof(predicate));
-			Guard.Against.Null(itemFactory, nameof(itemFactory));
+			Guard.ThrowIfNull(collection);
+			Guard.ThrowIfNull(predicate);
+			Guard.ThrowIfNull(itemFactory);
 
 			if(collection.Any(x => predicate(x)))
 			{

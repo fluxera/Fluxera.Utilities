@@ -4,7 +4,7 @@ namespace Fluxera.Collections.Generic
 	using System;
 	using System.Collections;
 	using System.Collections.Generic;
-	using Guards;
+	using Fluxera.Utilities;
 	using JetBrains.Annotations;
 
 	/// <summary>
@@ -41,7 +41,7 @@ namespace Fluxera.Collections.Generic
 		/// <inheritdoc />
 		public void Add(T item)
 		{
-			Guard.Against.Null(item, nameof(item));
+			Guard.ThrowIfNull(item);
 
 			int position = this.innerList.BinarySearch(item, this.comparer);
 			if (position < 0)

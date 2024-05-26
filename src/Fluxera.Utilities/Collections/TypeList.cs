@@ -6,7 +6,7 @@ namespace Fluxera.Collections.Generic
 	using System.Collections;
 	using System.Collections.Generic;
 	using System.Reflection;
-	using Fluxera.Guards;
+	using Fluxera.Utilities;
 	using JetBrains.Annotations;
 
 	/// <summary>
@@ -20,7 +20,7 @@ namespace Fluxera.Collections.Generic
 		private readonly List<Type> innerList;
 
 		/// <summary>
-		///     Creates a new instance of the <see cref="TypeList{T}" /> type..
+		///     Creates a new instance of the <see cref="TypeList{T}" /> type.
 		/// </summary>
 		public TypeList()
 		{
@@ -138,7 +138,7 @@ namespace Fluxera.Collections.Generic
 
 		private static void CheckType(Type item)
 		{
-			item = Guard.Against.Null(item);
+			item = Guard.ThrowIfNull(item);
 
 			if(!typeof(TBaseType).GetTypeInfo().IsAssignableFrom(item))
 			{

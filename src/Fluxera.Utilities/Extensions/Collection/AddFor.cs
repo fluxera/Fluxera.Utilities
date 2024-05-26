@@ -4,7 +4,6 @@ namespace Fluxera.Utilities.Extensions
 {
 	using System;
 	using System.Collections.Generic;
-	using Fluxera.Guards;
 
 	/// <summary>
 	///     Extension methods for the <see cref="ICollection{T}" /> type.
@@ -20,7 +19,7 @@ namespace Fluxera.Utilities.Extensions
 		/// <param name="predicate">The predicate to match by the elements to add.</param>
 		public static void AddFor<T>(this ICollection<T> target, T value, Predicate<T> predicate)
 		{
-			Guard.Against.Null(target, nameof(target));
+			Guard.ThrowIfNull(target);
 
 			if(predicate(value))
 			{

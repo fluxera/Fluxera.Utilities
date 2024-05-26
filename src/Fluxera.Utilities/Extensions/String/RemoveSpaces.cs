@@ -2,8 +2,6 @@
 
 namespace Fluxera.Utilities.Extensions
 {
-	using Fluxera.Guards;
-
 	/// <summary>
 	///     Extension methods for the <see cref="string" /> type.
 	/// </summary>
@@ -15,7 +13,7 @@ namespace Fluxera.Utilities.Extensions
 		/// <param name="str">The string to remove the spaces from.</param>
 		public static string RemoveSpaces(this string str)
 		{
-			Guard.Against.NullOrWhiteSpace(str, nameof(str));
+			Guard.ThrowIfNullOrWhiteSpace(str);
 
 			return str.Replace(" ", string.Empty);
 		}

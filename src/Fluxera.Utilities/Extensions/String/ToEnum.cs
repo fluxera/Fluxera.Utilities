@@ -3,7 +3,6 @@
 namespace Fluxera.Utilities.Extensions
 {
 	using System;
-	using Fluxera.Guards;
 
 	/// <summary>
 	///     Extension methods for the <see cref="string" /> type.
@@ -33,7 +32,7 @@ namespace Fluxera.Utilities.Extensions
 		/// <exception cref="ArgumentNullException"></exception>
 		public static TEnum ToEnum<TEnum>(this string value, bool ignoreCase) where TEnum : struct, Enum
 		{
-			Guard.Against.Null(value, nameof(value));
+			Guard.ThrowIfNull(value);
 
 			return (TEnum)Enum.Parse(typeof(TEnum), value, ignoreCase);
 		}

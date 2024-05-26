@@ -5,7 +5,6 @@ namespace Fluxera.Utilities.Extensions
 	using System;
 	using System.Collections.Generic;
 	using System.Linq;
-	using Fluxera.Guards;
 
 	/// <summary>
 	///     Extension methods for the <see cref="ICollection{T}" /> type.
@@ -21,8 +20,8 @@ namespace Fluxera.Utilities.Extensions
 		/// <exception cref="ArgumentNullException"></exception>
 		public static void RemoveMatching<T>(this ICollection<T> collection, Func<T, bool> predicate)
 		{
-			Guard.Against.Null(collection, nameof(collection));
-			Guard.Against.Null(predicate, nameof(predicate));
+			 Guard.ThrowIfNull(collection);
+			 Guard.ThrowIfNull(predicate);
 
 			IList<T> deleteList = collection.Where(predicate).ToList();
 			deleteList.ForEach(x => collection.Remove(x));

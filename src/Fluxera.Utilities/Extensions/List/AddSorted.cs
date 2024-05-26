@@ -3,7 +3,6 @@
 namespace Fluxera.Utilities.Extensions
 {
 	using System.Collections.Generic;
-	using Fluxera.Guards;
 	using JetBrains.Annotations;
 
 	/// <summary>
@@ -21,8 +20,8 @@ namespace Fluxera.Utilities.Extensions
 		/// <param name="comparer">The optional item comparer.</param>
 		public static void AddSorted<T>(this List<T> target, T item, IComparer<T> comparer = null)
 		{
-			Guard.Against.Null(target, nameof(target));
-			Guard.Against.Null(item, nameof(item));
+			Guard.ThrowIfNull(target, nameof(target));
+			Guard.ThrowIfNull(item, nameof(item));
 
 			comparer ??= Comparer<T>.Default;
 

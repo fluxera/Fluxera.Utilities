@@ -2,8 +2,6 @@
 
 namespace Fluxera.Utilities.Extensions
 {
-	using Fluxera.Guards;
-
 	/// <summary>
 	///     Extension methods for the <see cref="string" /> type.
 	/// </summary>
@@ -17,7 +15,7 @@ namespace Fluxera.Utilities.Extensions
 		/// <returns>The string including the prefix.</returns>
 		public static string EnsureStartsWith(this string str, string prefix)
 		{
-			Guard.Against.NullOrWhiteSpace(str, nameof(str));
+			Guard.ThrowIfNullOrWhiteSpace(str);
 
 			return str.StartsWith(prefix) ? str : string.Concat(prefix, str);
 		}
@@ -30,7 +28,7 @@ namespace Fluxera.Utilities.Extensions
 		/// <returns>The string including the prefix.</returns>
 		public static string EnsureStartsWith(this string str, char prefix)
 		{
-			Guard.Against.NullOrWhiteSpace(str, nameof(str));
+			Guard.ThrowIfNullOrWhiteSpace(str);
 
 			return str.StartsWith(prefix.ToString()) ? str : string.Concat(prefix, str);
 		}

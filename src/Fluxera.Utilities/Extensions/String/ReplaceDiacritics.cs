@@ -4,7 +4,6 @@ namespace Fluxera.Utilities.Extensions
 {
 	using System.Globalization;
 	using System.Text;
-	using Fluxera.Guards;
 
 	/// <summary>
 	///     Extension methods for the <see cref="string" /> type.
@@ -18,7 +17,7 @@ namespace Fluxera.Utilities.Extensions
 		/// <returns>The string without diacritical marks.</returns>
 		public static string ReplaceDiacritics(this string str)
 		{
-			Guard.Against.NullOrEmpty(str, nameof(str));
+			Guard.ThrowIfNullOrEmpty(str);
 
 			string normalizedString = str.Normalize(NormalizationForm.FormD);
 			StringBuilder stringBuilder = new StringBuilder();
