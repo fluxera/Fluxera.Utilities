@@ -2,7 +2,6 @@
 {
 	using System;
 	using System.Collections.Generic;
-	using System.Linq;
 	using System.Text;
 
 	internal static class UtilExtensions
@@ -28,7 +27,7 @@
 
 		public static LinkedList<T> ToLinkedList<T>(this IEnumerable<T> enumerable)
 		{
-			enumerable ??= Enumerable.Empty<T>();
+			enumerable ??= [];
 
 			return new LinkedList<T>(enumerable);
 		}

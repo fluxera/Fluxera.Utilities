@@ -12,7 +12,7 @@
 	///     http://blogs.msdn.com/b/meek/archive/2008/05/02/linq-to-entities-combining-predicates.aspx.
 	/// </summary>
 	[PublicAPI]
-	public sealed class ParameterRebinder : ExpressionVisitor
+	internal sealed class ParameterRebinder : ExpressionVisitor
 	{
 		private readonly Dictionary<ParameterExpression, ParameterExpression> map;
 
