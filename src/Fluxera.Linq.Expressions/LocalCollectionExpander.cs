@@ -15,7 +15,7 @@
 	///     See: http://petemontgomery.wordpress.com/2008/08/07/caching-the-results-of-linq-queries/
 	/// </remarks>
 	[PublicAPI]
-	public sealed class LocalCollectionExpander : ExpressionVisitor
+	internal sealed class LocalCollectionExpander : ExpressionVisitor
 	{
 		/// <summary>
 		///     Rewrites the given expression by expanding local collections.

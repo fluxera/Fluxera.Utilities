@@ -2,6 +2,8 @@
 {
 	using System;
 	using System.Linq.Expressions;
+	using System.Reflection;
+	using DynamicAnonymousType;
 	using FluentAssertions;
 	using NUnit.Framework;
 
@@ -47,6 +49,46 @@
 			// Assert
 			result.Should().NotBeNullOrWhiteSpace();
 			result.Should().Be("x => x.Name");
+		}
+
+		[Test]
+		public void ShouldCreateExpressionStringForSelectionExpression()
+		{
+			// Arrange
+			Expression<Func<Person, dynamic>> expression = x => new { x.Name };
+
+			// Act
+			string result = expression.ToExpressionString();
+
+			// Assert
+			result.Should().NotBeNullOrWhiteSpace();
+			result.Should().Be("x => new <>f__AnonymousType0`1(Name = x.Name)");
+		}
+
+		[Test]
+		public void ShouldCreateExpressionStringForDynamicSelectionExpression()
+		{
+			// Arrange
+			Type type = DynamicFactory.CreateType(("Name", typeof(string)));
+
+			PropertyInfo property = typeof(Person).GetProperty("Name");
+			PropertyInfo dynamicProperty = type.GetProperty("Name");
+
+			ParameterExpression parameter = Expression.Parameter(typeof(Person), "x");
+			MemberExpression propertyExpression = Expression.MakeMemberAccess(parameter, property);
+			MemberAssignment binding = Expression.Bind(dynamicProperty, propertyExpression);
+
+			NewExpression newExpression = Expression.New(type);
+			MemberInitExpression memberInitExpression = Expression.MemberInit(newExpression, binding);
+
+			Expression<Func<Person, dynamic>> expression = Expression.Lambda<Func<Person, dynamic>>(memberInitExpression, parameter);
+
+			// Act
+			string result = expression.ToExpressionString();
+
+			// Assert
+			result.Should().NotBeNullOrWhiteSpace();
+			result.Should().Be("x => new DynamicAnonymousType0`1() {Name = x.Name}");
 		}
 	}
 }

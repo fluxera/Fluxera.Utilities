@@ -13,7 +13,7 @@
 	///     Copyright notice http://msdn.microsoft.com/en-gb/cc300389.aspx#O
 	/// </remarks>
 	[PublicAPI]
-	public static class Evaluator
+	internal static class Evaluator
 	{
 		/// <summary>
 		///     Performs evaluation and replacement of independent sub-trees.
@@ -74,6 +74,12 @@
 				}
 
 				return base.Visit(exp);
+			}
+
+			/// <inheritdoc />
+			protected override Expression VisitMemberInit(MemberInitExpression node)
+			{
+				return node;
 			}
 
 			private Expression Evaluate(Expression e)
