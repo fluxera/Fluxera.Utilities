@@ -20,11 +20,9 @@
 		///     See Pete Montgomery's post here:
 		///     http://petemontgomery.wordpress.com/2008/08/07/caching-the-results-of-linq-queries/
 		/// </remarks>
-		/// <typeparam name="T"></typeparam>
-		/// <typeparam name="TResult"></typeparam>
 		/// <param name="expression"></param>
 		/// <returns></returns>
-		public static string ToExpressionString<T, TResult>(this Expression<Func<T, TResult>> expression)
+		public static string ToExpressionString(this Expression expression)
 		{
 			if(expression is null)
 			{
@@ -41,6 +39,24 @@
 
 			// Use the string representation of the expression for the cache key.
 			return expr.ToString();
+		}
+
+		/// <summary>
+		///     Converts the given <see cref="Expression" /> to a string representation.
+		/// </summary>
+		/// <remarks>
+		///     See Pete Montgomery's post here:
+		///     http://petemontgomery.wordpress.com/2008/08/07/caching-the-results-of-linq-queries/
+		/// </remarks>
+		/// <typeparam name="T"></typeparam>
+		/// <typeparam name="TResult"></typeparam>
+		/// <param name="expression"></param>
+		/// <returns></returns>
+		public static string ToExpressionString<T, TResult>(this Expression<Func<T, TResult>> expression)
+		{
+			Expression expr = expression;
+			
+			return expr?.ToExpressionString();
 		}
 
 		/// <summary>
