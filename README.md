@@ -85,7 +85,7 @@ The ```Convert()``` extension methods also provide overloads to provide a custom
 - **```IsTimeEqual```** Determines if the time part of two ```DateTime``` values are equal.
 - **```IsToday```** Determines if a date is ```DateTime.Today```.
 - **```IsWeekday```** Determines if a ```DateTime``` or ```DayOfWeek``` is a weekday.
-- **```IsWeekend```**Determines if a ```DateTime``` or ```DayOfWeek``` is a weekend.
+- **```IsWeekend```** Determines if a ```DateTime``` or ```DayOfWeek``` is a weekend.
 - **```Midnight```** Gets a ```DateTime```representing midnight on a specified date.
 - **```NextMonth```** Gets the next month.
 - **```Noon```** Gets a ```DateTime``` representing noon on a specified date.
@@ -199,7 +199,7 @@ The numeric extensions methods are available for the following primitives: ```by
 - **```RemoveSpaces```** Removes all whitespace (not line endings, etc.) from a string.
 - **```RemoveSpecialCharacters```** Removes all special characters from a string.
 - **```Repeat```** Repeats a string value as provided by the repeat count.
-- **```ReplaceDiacritics```** Replaces all diacritical marks with an ascii representation, fe. 'ü' to 'u'.
+- **```ReplaceDiacritics```** Replaces all diacritical marks with an ascii representation, fe. 'Ã¼' to 'u'.
 - **```ReplaceWithEmpty```** Replaces all occurrences of a string in an input string with ```string.Empty```.
 - **```Reverse```**Reverses the a string.
 - **```Right```** Gets a substring of a string from end of the string.
